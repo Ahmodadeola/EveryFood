@@ -1,9 +1,21 @@
 import React, { useState } from "react";
 import { FaBars } from "react-icons/fa";
 import MobileNavBar from "./MobileNavBar";
+import NavItems from "./NavItems";
 
 function Header() {
   const [isOpen, setOpen] = useState(false);
+  const navLinks = [
+    { title: "Home", link: "/#" },
+    { title: "About", link: "/#" },
+    { title: "Login", link: "/#" },
+    {
+      title: "Sign Up",
+      link: "/#",
+      addStyle:
+        "transition ease-in duration-400 rounded p-3 font-bold hover:text-green-500 hover:bg-green-200 bg-green-400 text-white",
+    },
+  ];
   return (
     <header className="text-green-500 z-0">
       <nav className="shadow-md flex items-center p-4">
@@ -14,18 +26,7 @@ function Header() {
           </span>
         </div>
         <ul className="hidden md:flex ml-auto justify-around">
-          <li className="mr-6 inline-block p-3">
-            <a href="/#">Home</a>
-          </li>
-          <li className="mr-6 inline-block p-3">
-            <a href="/#">About</a>
-          </li>
-          <li className="mr-6 inline-block p-3">
-            <a href="/#">Login</a>
-          </li>
-          <li className="transition ease-in duration-400 mr-6 inline-block rounded p-3 font-bold hover:text-green-500 hover:bg-green-200 bg-green-400 text-white">
-            <a href="/#">Sign Up</a>
-          </li>
+          <NavItems items={navLinks} className="mr-6 inline-block p-3" />
         </ul>
         <FaBars
           size="30"

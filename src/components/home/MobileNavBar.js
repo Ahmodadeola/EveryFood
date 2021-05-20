@@ -1,7 +1,17 @@
 import React from "react";
 import { FaTimes } from "react-icons/fa";
+import NavItems from "./NavItems";
 
 const MobileNavBar = ({ isOpen = false, setOpen = (f) => f }) => {
+  const navLinks = [
+    { title: "Home", link: "/#" },
+    { title: "About", link: "/#" },
+    { title: "Login", link: "/#" },
+    {
+      title: "Sign Up",
+      link: "/#",
+    },
+  ];
   const mainClasses = `w-full h-7 left-0 top-0 absolute border-indigo-20 md:hidden transform
   transition ease-in duration-400`.split();
   isOpen
@@ -11,18 +21,7 @@ const MobileNavBar = ({ isOpen = false, setOpen = (f) => f }) => {
     <div className={mainClasses.join(" ")}>
       <ul className="flex flex-col bg-gray-800 z-3 text-green-500 p-6">
         <FaTimes size="30" onClick={() => setOpen(false)} className="ml-auto" />
-        <li className="p-3">
-          <a href="/#">Home</a>
-        </li>
-        <li className="p-3">
-          <a href="/#">About</a>
-        </li>
-        <li className="p-3">
-          <a href="/#">Login</a>
-        </li>
-        <li className="p-3">
-          <a href="/#">Sign Up</a>
-        </li>
+        <NavItems items={navLinks} className="p-3" />
       </ul>
     </div>
   );
