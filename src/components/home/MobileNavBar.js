@@ -12,7 +12,8 @@ const MobileNavBar = ({ isOpen = false, setOpen = (f) => f }) => {
       link: "/#",
     },
   ];
-  const mainClasses = `w-full h-7 left-0 top-0 absolute border-indigo-20 md:hidden transform
+  const mainClasses =
+    `cursor-pointer w-full h-7 left-0 top-0 absolute border-indigo-20 md:hidden transform
   transition ease-in duration-400`.split();
   isOpen
     ? mainClasses.push("translate-y-0")

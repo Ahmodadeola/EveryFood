@@ -1,24 +1,33 @@
 import "./App.css";
-import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
+import { Switch, BrowserRouter as Router, Redirect } from "react-router-dom";
+import ProtectedRoute from "./core/routes/ProtectedRoute";
 
 import Home from "./pages/index";
 
 function App() {
-  // const Main = (
-  //   <div className="App">
-  //     <Home />
-  //   </div>
-  // );
   return (
     <Router>
       <Switch>
-        <Route
-          to="/"
-          render={() => (
+        <Redirect exact from="/" to="/home" />
+        <ProtectedRoute
+          path="/home"
+          condition={true}
+          redirectPathname="/app"
+          component={() => (
             <div className="App">
               <Home />
             </div>
           )}
+        />
+        <ProtectedRoute
+          path={/^(\/app)/}
+          condition={false}
+          redirectPathname="/home"
+        />
+        <ProtectedRoute
+          path={/^(\/auth)/}
+          condition={false}
+          redirectPathname="/"
         />
       </Switch>
     </Router>

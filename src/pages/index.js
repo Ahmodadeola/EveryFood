@@ -9,7 +9,7 @@ const Home = () => {
   return (
     <body>
       <Header />
-      <main className="p-0 m-0">
+      <main className="p-0 mt-24">
         <Customer />
         <Vendor />
         <About />

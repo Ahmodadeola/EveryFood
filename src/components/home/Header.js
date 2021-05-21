@@ -17,7 +17,7 @@ function Header() {
     },
   ];
   return (
-    <header className="text-green-500 z-0 mb-5">
+    <header className="text-green-500 z-0 mb-5 fixed bg-white w-full top-0">
       <nav className="shadow-md flex items-center p-4">
         <div className="ml-3 md:ml-2 md:text-left">
           <h2 className="text-left text-xl font-bold">EveryFood</h2>
@@ -31,7 +31,7 @@ function Header() {
         <FaBars
           size="30"
           onClick={() => setOpen(!isOpen)}
-          className="ml-auto md:hidden text-green-500"
+          className="ml-auto md:hidden text-green-500 cursor-pointer"
         />
         <MobileNavBar setOpen={setOpen} isOpen={isOpen} />
       </nav>
