@@ -6,7 +6,7 @@ function NavItems({ items, className }) {
       {items.map((item, idx) => {
         className = item.addStyle ? className.concat(item.addStyle) : className;
         return (
-          <li className={className}>
+          <li className={className} key={idx}>
             <a href={item.link}>{item.title}</a>
           </li>
         );

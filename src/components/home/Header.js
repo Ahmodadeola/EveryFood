@@ -13,15 +13,15 @@ function Header() {
       title: "Sign Up",
       link: "/#",
       addStyle:
-        "transition ease-in duration-400 rounded p-3 font-bold hover:text-green-500 hover:bg-green-200 bg-green-400 text-white",
+        "transition ease-in duration-400 rounded p-3 font-bold hover:text-green-500 hover:bg-green-200 bg-green-500 text-white",
     },
   ];
   return (
-    <header className="text-green-500 z-0">
+    <header className="text-green-500 z-0 mb-5">
       <nav className="shadow-md flex items-center p-4">
         <div className="ml-3 md:ml-2 md:text-left">
           <h2 className="text-left text-xl font-bold">EveryFood</h2>
-          <span className="text-sm text-gray-700">
+          <span className="text-xs text-gray-600">
             Where food lovers meet food makers
           </span>
         </div>

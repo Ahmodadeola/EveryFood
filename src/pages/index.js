@@ -7,13 +7,15 @@ import Vendor from "../components/home/Vendor";
 
 const Home = () => {
   return (
-    <main>
+    <body>
       <Header />
-      <Customer />
-      <Vendor />
-      <About />
-      <Footer />
-    </main>
+      <main className="p-0 m-0">
+        <Customer />
+        <Vendor />
+        <About />
+        <Footer />
+      </main>
+    </body>
   );
 };
 
