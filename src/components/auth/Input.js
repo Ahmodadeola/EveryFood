@@ -1,10 +1,14 @@
 import React from "react";
 
 const Input = (props) => {
-  const { inputType, name, options } = props;
+  const { inputType = "input", name, options } = props;
   switch (inputType) {
     case "input":
-      return <input {...props} className="custom-input" />;
+      return (
+        <div className="">
+          <input {...props} className="input-custom" />
+        </div>
+      );
     case "select":
       return (
         <select>
