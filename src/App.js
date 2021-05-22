@@ -13,8 +13,8 @@ function App() {
         <Redirect exact from="/" to="/home" />
         {AuthRoutes.map((route, idx) => (
           <ProtectedRoute
-            path={`/app/${route.path}`}
-            condition={false}
+            path={`/auth${route.path}`}
+            condition={true}
             component={route.component}
             redirectPathname="/auth"
           />

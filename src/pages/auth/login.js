@@ -1,5 +1,7 @@
 import React from "react";
 import useForm from "../../hooks/useForm";
+import LoginComponent from "../../components/auth/login";
+import AuthLayout from "../../layouts/authLayout";
 
 function Login() {
   const forms = {
@@ -18,8 +20,13 @@ function Login() {
     },
   };
 
-  const Form = useForm(forms);
-  return <Form />;
+  //   const Form = useForm(forms);
+  return (
+    <AuthLayout>
+      Login Page
+      <LoginComponent />
+    </AuthLayout>
+  );
 }
 
 export default Login;
