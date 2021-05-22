@@ -7,7 +7,7 @@ import Vendor from "../components/home/Vendor";
 
 const Home = () => {
   return (
-    <body>
+    <>
       <Header />
       <main className="p-0 mt-24">
         <Customer />
@@ -15,7 +15,7 @@ const Home = () => {
         <About />
         <Footer />
       </main>
-    </body>
+    </>
   );
 };
 
