@@ -1,12 +1,29 @@
 import React from "react";
-import LoginComponent from "../../components/auth/login";
+import InputForm from "../../components/auth/InputForm";
 import AuthLayout from "../../layouts/authLayout";
 
 function Login() {
-  //   const Form = useForm(forms);
+  const forms = {
+    email: {
+      name: "email",
+      rules: [
+        (v) => !!v || "Email is required",
+        (v) => /.+@.+\..+/.test(v) || "▲ E-mail must be valid",
+      ],
+    },
+    password: {
+      name: "password",
+      type: "password",
+      required: true,
+      rules: [
+        (v) => !!v || "Password is required",
+        (v) => v.length > 6 || "Password must not be less than 6 characters",
+      ],
+    },
+  };
   return (
     <AuthLayout>
-      <LoginComponent />
+      <InputForm forms={forms} />
     </AuthLayout>
   );
 }

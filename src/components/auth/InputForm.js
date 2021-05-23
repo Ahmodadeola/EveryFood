@@ -19,7 +19,7 @@ function Login({ forms, mode = "login" }) {
   //       ],
   //     },
   //   };
-  const btnText = mode[0].toUpperCase() + mode.slice(1);
+  const btnText = mode === "login" ? "Login" : "Submit";
   const otherAuthText =
     mode === "login"
       ? "Don't have an account yet?"
@@ -27,10 +27,16 @@ function Login({ forms, mode = "login" }) {
   const otherAuthLink = mode === "login" ? "signup" : "login";
   return (
     <div className="py-8 h-full text-center">
-      <h2 className="text-green-500 text-xl font-bold">Login</h2>
-      <form className="flex flex-col justify-around items-center h-1/2 md:h-2/3 m-5">
+      <h2 className="text-green-500 text-xl font-bold">{mode}</h2>
+      <form className="flex flex-col space-y-4 items-center h-1/2 md:h-2/3 m-5">
         {Object.entries(forms).map(([key, value], idx) => (
-          <Input type={key} name={key} config={value} />
+          <Input
+            type={key}
+            name={key}
+            config={value}
+            className="my-16"
+            key={idx}
+          />
         ))}
         <button className="btn-custom mx-auto">{btnText}</button>
         <p className="text-sm font-bold text-gray-500">

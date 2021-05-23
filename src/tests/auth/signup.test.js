@@ -1,12 +1,12 @@
 import { render } from "@testing-library/react";
-import Login from "../../pages/auth/login";
+import Signup from "../../pages/auth/signup";
 
 describe("Signup page", () => {
-  const { getByLabelText, getByText } = render(<Login />);
+  const { getByLabelText, getByText } = render(<Signup />);
   test("input labels check", () => {
-    ["email", "first-name", "last-name", "password"].forEach((name) =>
+    ["Email", "First-name", "Last-name", "Password"].forEach((name) =>
       getByLabelText(name)
     );
-    getByText("Sign up");
+    getByText("Submit");
   });
 });
