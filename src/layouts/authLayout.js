@@ -1,10 +1,14 @@
 import React from "react";
+import Footer from "../components/home/footer";
 
 function AuthLayout({ children }) {
   return (
-    <div className="bg-green-500">
-      <div className="md:w-1/2 h-40 bg-white">{children}</div>
-    </div>
+    <>
+      <div className="flex justify-center items-center bg-green-500 h-screen p-6">
+        <div className="w-full h-full md:w-1/3 bg-white">{children}</div>
+      </div>
+      <Footer />
+    </>
   );
 }
 

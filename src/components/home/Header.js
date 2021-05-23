@@ -6,9 +6,9 @@ import NavItems from "./NavItems";
 function Header() {
   const [isOpen, setOpen] = useState(false);
   const navLinks = [
-    { title: "Home", link: "/#" },
-    { title: "About", link: "/#" },
-    { title: "Login", link: "/#" },
+    { title: "Home", link: "/" },
+    { title: "About", link: "/" },
+    { title: "Login", link: "/auth/login" },
     {
       title: "Sign Up",
       link: "/#",

@@ -1,14 +1,29 @@
 import React from "react";
 
 const Input = (props) => {
-  const { inputType = "input", name, options } = props;
+  const {
+    inputType = "input",
+    config: { name },
+    options,
+  } = props;
+  let input = <input />;
   switch (inputType) {
     case "input":
-      return (
+      return (input = (
         <div className="">
-          <input {...props} className="input-custom" />
+          <label
+            className="text-lg text-green-400 text-medium block"
+            htmlFor={name}
+          >
+            {name[0].toUpperCase() + name.slice(1)}
+          </label>
+          <input
+            {...props}
+            placeholder={name[0].toUpperCase() + name.slice(1)}
+            className="input-custom"
+          />
         </div>
-      );
+      ));
     case "select":
       return (
         <select>
@@ -20,7 +35,8 @@ const Input = (props) => {
     case "textarea":
       return <textarea name={name} id="" cols="30" rows="10"></textarea>;
     default:
-      return <input />;
+      console.log("Default returned");
+      return input;
   }
 };
 

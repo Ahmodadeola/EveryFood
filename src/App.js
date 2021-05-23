@@ -13,6 +13,7 @@ function App() {
         <Redirect exact from="/" to="/home" />
         {AuthRoutes.map((route, idx) => (
           <ProtectedRoute
+            key={idx}
             path={`/auth${route.path}`}
             condition={true}
             component={route.component}
