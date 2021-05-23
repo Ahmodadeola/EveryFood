@@ -19,6 +19,7 @@ const Input = (props) => {
           </label>
           <input
             {...props}
+            id={name}
             placeholder={name[0].toUpperCase() + name.slice(1)}
             className="input-custom"
           />
