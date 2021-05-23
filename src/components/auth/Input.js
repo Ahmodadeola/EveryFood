@@ -3,7 +3,7 @@ import React from "react";
 const Input = (props) => {
   const {
     inputType = "input",
-    config: { name },
+    config: { name, type = "text" },
     options,
   } = props;
   let input = <input />;
@@ -12,7 +12,7 @@ const Input = (props) => {
       return (input = (
         <div className="">
           <label
-            className="text-lg text-green-400 text-medium block"
+            className="text-lg text-green-400 text-medium block text-left"
             htmlFor={name}
           >
             {name[0].toUpperCase() + name.slice(1)}
@@ -20,6 +20,7 @@ const Input = (props) => {
           <input
             {...props}
             id={name}
+            type={type}
             placeholder={name[0].toUpperCase() + name.slice(1)}
             className="input-custom"
           />
