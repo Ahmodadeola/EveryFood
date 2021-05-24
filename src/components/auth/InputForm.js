@@ -36,10 +36,8 @@ function Login({ forms, mode = "login" }) {
   const { btnText, otherAuthLink, otherAuthText, headText } = modeProps[mode];
   return (
     <div className="py-8 h-full text-center">
-      <h2 className="md:text-left ml-3 text-green-500 font-bold mb-5">
-        EveryFood
-      </h2>
-      <h3 className="text-green-200 text-xl font-medium">{headText}</h3>
+      <h2 className="ml-3 text-green-500 font-bold mb-5">EveryFood</h2>
+      <h3 className="text-green-700 text-xl font-medium">{headText}</h3>
       <form className="flex flex-col space-y-4 items-center h-1/2 md:h-2/3 m-5">
         {Object.entries(forms).map(([key, value], idx) => (
           <Input
