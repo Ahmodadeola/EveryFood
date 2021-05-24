@@ -11,7 +11,7 @@ function Header() {
     { title: "Login", link: "/auth/login" },
     {
       title: "Sign Up",
-      link: "/#",
+      link: "/auth/signup",
       addStyle:
         "transition ease-in duration-400 rounded p-3 font-bold hover:text-green-500 hover:bg-green-200 bg-green-500 text-white",
     },
@@ -33,7 +33,7 @@ function Header() {
           onClick={() => setOpen(!isOpen)}
           className="ml-auto md:hidden text-green-500 cursor-pointer"
         />
-        <MobileNavBar setOpen={setOpen} isOpen={isOpen} />
+        <MobileNavBar setOpen={setOpen} navLinks={navLinks} isOpen={isOpen} />
       </nav>
     </header>
   );
