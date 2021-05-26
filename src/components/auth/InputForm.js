@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { memo } from "react";
 import Input from "./Input";
 
@@ -34,6 +35,7 @@ function Login({ forms, mode = "login" }) {
     },
   };
   const { btnText, otherAuthLink, otherAuthText, headText } = modeProps[mode];
+
   return (
     <div className="py-8 h-full text-center">
       <h2 className="ml-3 text-green-500 font-bold mb-5">EveryFood</h2>

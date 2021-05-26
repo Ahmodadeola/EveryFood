@@ -1,21 +1,24 @@
-import React from "react";
+import React, { useReducer } from "react";
 import InputForm from "../../components/auth/InputForm";
 import AuthLayout from "../../layouts/authLayout";
 
 function Signup() {
-  const forms = {
+  const initForms = {
     firstName: {
       name: "first-name",
+      value: "",
       required: true,
       rules: [(v) => !!v || "First name is required"],
     },
     lastName: {
       name: "last-name",
+      value: "",
       required: true,
-      rules: [(v) => !!v || "First name is required"],
+      rules: [(v) => !!v || "Last name is required"],
     },
     email: {
       name: "email",
+      value: "",
       rules: [
         (v) => !!v || "Email is required",
         (v) => /.+@.+\..+/.test(v) || "▲ E-mail must be valid",
@@ -23,6 +26,7 @@ function Signup() {
     },
     password: {
       name: "password",
+      value: "",
       type: "password",
       required: true,
       rules: [
@@ -32,6 +36,7 @@ function Signup() {
     },
     confirmPassword: {
       name: "confirm-password",
+      value: "",
       type: "password",
       required: true,
       rules: [
@@ -40,9 +45,17 @@ function Signup() {
       ],
     },
   };
+
+  const [forms, updateForm] = useReducer((forms, value, input) => {
+    const formDup = { ...forms };
+    formDup[input] = value;
+    console.log(`[In signup page] new form is => ${forms}`);
+    return formDup;
+  }, initForms);
+
   return (
     <AuthLayout>
-      <InputForm forms={forms} mode="signup" />
+      <InputForm forms={forms} updateForm={updateForm} mode="signup" />
     </AuthLayout>
   );
 }

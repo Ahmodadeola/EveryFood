@@ -6,6 +6,7 @@ function Login() {
   const forms = {
     email: {
       name: "email",
+      value: "",
       rules: [
         (v) => !!v || "Email is required",
         (v) => /.+@.+\..+/.test(v) || "▲ E-mail must be valid",
@@ -14,6 +15,7 @@ function Login() {
     password: {
       name: "password",
       type: "password",
+      value: "",
       required: true,
       rules: [
         (v) => !!v || "Password is required",
