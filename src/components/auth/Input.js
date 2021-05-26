@@ -1,4 +1,4 @@
-import React, { useCallback, useReducer } from "react";
+import React, { useCallback, useEffect, useReducer } from "react";
 import useInput from "../../hooks/useInput";
 
 const Input = (props) => {
@@ -7,10 +7,23 @@ const Input = (props) => {
     inputType = "input",
     config: { name, type = "text" },
     options,
+    setValue,
   } = props;
 
-  const { show, error, focused, changeHandler, blurHandler, focusHandler } =
-    useInput(props.config, (value) => (props.config.value = value));
+  const {
+    value,
+    show,
+    error,
+    focused,
+    changeHandler,
+    blurHandler,
+    focusHandler,
+  } = useInput(props.config, setValue);
+
+  // update the form data when value changes
+  useEffect(() => {
+    setValue(name, value, !error);
+  }, [name, value, error, setValue]);
 
   const formatLabel = useCallback((text) => {
     return text.replace(/[-_]/g, " ");
@@ -43,14 +56,12 @@ const Input = (props) => {
   switch (inputType) {
     case "input":
       let fmtName = formatLabel(name);
-
       return (input = (
         <div className="">
           <label className={labelClasses.join(" ")} htmlFor={name}>
             {fmtName[0].toUpperCase() + fmtName.slice(1)}
           </label>
           <input
-            {...props}
             onChange={changeHandler}
             onFocus={focusHandler}
             onBlur={blurHandler}
