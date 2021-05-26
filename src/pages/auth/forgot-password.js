@@ -2,7 +2,7 @@ import React, { memo } from "react";
 import InputForm from "../../components/auth/InputForm";
 import AuthLayout from "../../layouts/authLayout";
 
-function Login() {
+function ForgotPassword() {
   const forms = {
     email: {
       name: "email",
@@ -10,16 +10,6 @@ function Login() {
       rules: [
         (v) => !!v || "Email is required",
         (v) => /.+@.+\..+/.test(v) || "▲ E-mail must be valid",
-      ],
-    },
-    password: {
-      name: "password",
-      type: "password",
-      value: "",
-      required: true,
-      rules: [
-        (v) => !!v || "Password is required",
-        (v) => v.length > 6 || "Password must not be less than 6 characters",
       ],
     },
   };
@@ -30,4 +20,4 @@ function Login() {
   );
 }
 
-export default memo(Login);
+export default memo(ForgotPassword);

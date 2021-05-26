@@ -1,11 +1,4 @@
-import React, {
-  memo,
-  useCallback,
-  useEffect,
-  useMemo,
-  useReducer,
-  useState,
-} from "react";
+import React, { memo } from "react";
 import Input from "./Input";
 import useForm from "../../hooks/useForm";
 
@@ -13,43 +6,8 @@ import useForm from "../../hooks/useForm";
 // rerendering hook like useEffect, only pass memoized functions(using callback) in that scenerio
 
 function InputForm({ forms, mode = "login" }) {
-  // stores value for all form inputs
-  const [_formData, _setFormData] = useReducer(
-    (data, { key, value, valid }) => {
-      const dataDup = { ...data };
-      dataDup[key] = { value, valid };
-      return dataDup;
-    },
-    {}
-  );
-
-  const [valid, setValid] = useState(false);
-
-  // memoized form data object
-  const formData = useMemo(() => {
-    return { ..._formData };
-  }, [_formData]);
-
-  useEffect(() => {
-    let _valid = true;
-    Object.values(formData).forEach((data) => {
-      _valid = _valid && data.valid;
-      console.log(
-        `[In InputForm] _valid => ${_valid}, data is => ${data.valid}`
-      );
-    });
-    setValid(_valid);
-    console.log(`[In InputForm] ${JSON.stringify(formData)}, ${_valid}`);
-  }, [formData]);
-
-  // memoized setFormData
-  const setFormData = useCallback(
-    (key, value, valid) => {
-      _setFormData({ key, value, valid });
-      console.log(`[in useCallback] key => ${key}, value=> ${value}`);
-    },
-    [_setFormData]
-  );
+  // extract form states and functions
+  const { setFormData, submitForm, valid } = useForm(mode);
 
   // page texts in object
   const modeProps = {
@@ -69,12 +27,6 @@ function InputForm({ forms, mode = "login" }) {
 
   // extract page texts
   const { btnText, otherAuthLink, otherAuthText, headText } = modeProps[mode];
-
-  // submit form handler
-  const submitForm = (e) => {
-    e.preventDefault();
-    console.log(formData);
-  };
 
   return (
     <div className="py-8 h-full text-center">
