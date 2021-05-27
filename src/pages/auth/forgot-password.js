@@ -15,7 +15,7 @@ function ForgotPassword() {
   };
   return (
     <AuthLayout>
-      <InputForm forms={forms} />
+      <InputForm forms={forms} mode="forgot-password" />
     </AuthLayout>
   );
 }

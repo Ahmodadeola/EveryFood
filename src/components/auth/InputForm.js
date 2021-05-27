@@ -23,6 +23,12 @@ function InputForm({ forms, mode = "login" }) {
       otherAuthText: "Have an account already?",
       headText: "Create account",
     },
+    "forgot-password": {
+      btnText: "Submit",
+      headText: "Recover password",
+      otherAuthText: "Back to ",
+      otherAuthLink: "login",
+    },
   };
 
   // extract page texts
@@ -56,6 +62,13 @@ function InputForm({ forms, mode = "login" }) {
             {otherAuthLink}
           </a>
         </p>
+        {mode !== "forgot-password" && (
+          <p className="text-sm font-bold text-gray-500">
+            <a href={`/auth/forgot-password`} className="text-green-700 ml-1">
+              forgot password
+            </a>
+          </p>
+        )}
       </form>
     </div>
   );
