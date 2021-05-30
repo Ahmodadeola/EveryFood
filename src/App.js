@@ -20,6 +20,15 @@ function App() {
             redirectPathname="/auth"
           />
         ))}
+        {AppRoutes.map((route, idx) => (
+          <ProtectedRoute
+            key={idx}
+            path={`/app${route.path}`}
+            condition={true}
+            component={route.component}
+            redirectPathname="/auth"
+          />
+        ))}
         <ProtectedRoute
           path="/home"
           condition={true}
