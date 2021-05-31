@@ -1,10 +1,16 @@
+import Dishes from "../../pages/app/dishes";
+import Profile from "../../pages/app/profile";
+import Tray from "../../pages/app/tray";
+import Vendor from "../../pages/app/vendor";
+
 const routes = [
-  { name: "dashboard", path: "/dashboard", component: "Home" },
-  { name: "profile", path: "/profile", component: "signup" },
+  { name: "Dishes", path: "/dishes", component: Dishes },
+  { name: "Profile", path: "/profile", component: Profile },
+  { name: "Tray", path: "/tray", component: Tray },
   {
-    name: "dishes",
-    path: "/dishes",
-    component: "forgot-password",
+    name: "Vendor",
+    path: "/vendor",
+    component: Vendor,
   },
 ];
 export default routes;
