@@ -1,4 +1,4 @@
-import { fireEvent, render } from "@testing-library/react";
+import { fireEvent, getByText, render } from "@testing-library/react";
 import Signup from "../../pages/auth/signup";
 
 describe("Signup page", () => {
@@ -23,7 +23,8 @@ describe("Signup page", () => {
   });
 
   test("form validation check", () => {
-    const { getByLabelText } = render(<Signup />);
+    const { getByLabelText, getByText } = render(<Signup />);
+    expect(getByText("Submit")).toHaveAttribute("disabled");
     ["Email", "First name", "Last name", "Password"].forEach((name) => {
       const input = getByLabelText(name);
       fireEvent.focus(input);
