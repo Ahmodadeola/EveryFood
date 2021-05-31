@@ -9,13 +9,12 @@ function NavBar() {
     {
       title: "Vendor",
       link: "/app/vendor",
-      addStyle:
-        "transition ease-in duration-400 rounded p-3 font-bold hover:text-green-500 hover:bg-green-200 bg-green-500 text-white",
     },
   ];
   return (
-    <nav className="md:absolute top-0 h-screen ">
-      <ul className="flex flex-col space-y-5">
+    <nav className="pl-3 md:absolute top-0 h-screen border-solid border-r-2 md:w-1/4">
+      <ul className="invisible md:visible flex flex-col space-y-5">
+        <h2 className="text-xl text-green-600 font-bold">EveryFood</h2>
         <NavItems
           items={navLinks}
           className="border-solid hover:border-left-2 px-3 py-4"

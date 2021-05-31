@@ -5,9 +5,12 @@ import Header from "../components/app/Header";
 function AppLayout({ children }) {
   return (
     <>
-      <Header />
       <NavBar />
-      {children}
+      <div className="md:w-3/4 md:float-right">
+        <Header />
+      </div>
+
+      <main className="w-full md:w-3/4 md:float-right">{children}</main>
     </>
   );
 }
