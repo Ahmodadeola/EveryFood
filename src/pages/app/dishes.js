@@ -3,7 +3,7 @@ import AppLayout from "../../layouts/appLayout";
 
 function Dishes() {
   return (
-    <AppLayout>
+    <AppLayout page="dishes">
       <main>
         <p>This is the dishes page</p>
       </main>

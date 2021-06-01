@@ -3,7 +3,7 @@ import AppLayout from "../../layouts/appLayout";
 
 function Tray() {
   return (
-    <AppLayout>
+    <AppLayout page="tray">
       <main>
         <p>This is the tray page</p>
       </main>
