@@ -9,6 +9,7 @@ import {
   FaUserTie,
 } from "react-icons/fa";
 import SearchForm from "./SearchForm";
+import SearchInput from "./SearchInput";
 import MobileNavBar from "../home/MobileNavBar";
 
 function Header({ page }) {
@@ -29,6 +30,9 @@ function Header({ page }) {
     <header className={`md:w-full ${!search && "p-4"} shadow`}>
       {!search ? (
         <div className="flex justify-between items-center">
+          {/* Desktop view */}
+
+          {/*icons for Mobile view*/}
           <FaBars
             size="20"
             onClick={() => toggle(true)}
@@ -37,6 +41,7 @@ function Header({ page }) {
           <p title="page" className="text-lg text-green-400 font-medium ml-6">
             {page[0].toUpperCase() + page.slice(1)}
           </p>
+          <SearchInput />
           <FaSearch
             size="20"
             className="text-green-400 md:hidden cursor-pointer"
