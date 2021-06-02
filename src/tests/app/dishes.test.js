@@ -1,4 +1,4 @@
-import { render } from "@testing-library/react";
+import { screen, render, fireEvent } from "@testing-library/react";
 import Dishes from "../../pages/app/dishes";
 
 describe("Dishes page test", () => {
@@ -23,8 +23,11 @@ describe("Dishes page test", () => {
   });
 
   test("Header data check", () => {
-    const { getByTitle } = render(<Dishes />);
+    const { getByTitle, getByLabelText } = render(<Dishes />);
     const page = getByTitle("page");
     expect(page.textContent).toBe(links[0]);
+    const searchIcon = document.querySelectorAll("header>div>svg")[1];
+    fireEvent.click(searchIcon);
+    expect(getByLabelText("mobile search form")).toHaveFocus();
   });
 });

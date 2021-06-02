@@ -10,7 +10,9 @@ function AppLayout({ children, page }) {
         <Header page={page} />
       </div>
 
-      <main className="w-full md:w-3/4 md:float-right">{children}</main>
+      <main className="w-full md:w-4/5 md:float-right bg-gray-100">
+        {children}
+      </main>
     </>
   );
 }
