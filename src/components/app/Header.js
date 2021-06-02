@@ -26,35 +26,27 @@ function Header({ page }) {
     },
   ];
   return (
-    <header className="md:w-full h-14 p-4 shadow">
+    <header className={`md:w-full ${!search && "p-4"} shadow`}>
       {!search ? (
         <div className="flex justify-between items-center">
           <FaBars
             size="20"
             onClick={() => toggle(true)}
-            className="md:hidden text-green-400"
+            className="md:hidden text-green-400 cursor-pointer"
           />
           <p title="page" className="text-lg text-green-400 font-medium ml-6">
             {page[0].toUpperCase() + page.slice(1)}
           </p>
           <FaSearch
             size="20"
-            className="text-green-400 md:hidden"
+            className="text-green-400 md:hidden cursor-pointer"
             onClick={() => toggleSearch(true)}
           />
           <MobileNavBar navLinks={navLinks} isOpen={open} setOpen={toggle} />
         </div>
       ) : (
-        <SearchForm />
+        <SearchForm toggle={() => toggleSearch(false)} />
       )}
-      {/* <div className="md:float-right md:w-2/5 items-center flex justify-around">
-        <input
-          className="border-solid border-gray border-2"
-          type="search"
-          placeholder="Enter keyword..."
-        />
-        <MdPerson size="20" className="cursor-pointer" color="green" />
-      </div> */}
     </header>
   );
 }
