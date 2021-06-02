@@ -3,7 +3,7 @@ import AppLayout from "../../layouts/appLayout";
 
 function Profile() {
   return (
-    <AppLayout>
+    <AppLayout page="profile">
       <main>
         <p>This is the profile page</p>
       </main>
