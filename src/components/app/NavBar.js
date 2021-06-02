@@ -1,14 +1,18 @@
 import React from "react";
 import NavItems from "../home/NavItems";
+import { FaUtensils, FaShoppingBasket, FaUserTie } from "react-icons/fa";
+import { AiFillShop } from "react-icons/ai";
+import { MdPortrait } from "react-icons/md";
 
 function NavBar({ active }) {
   const navLinks = [
-    { title: "Dishes", link: "/app/dishes" },
-    { title: "Tray", link: "/app/tray" },
-    { title: "Profile", link: "/app/profile" },
+    { title: "Dishes", link: "/app/dishes", icon: FaUtensils },
+    { title: "Tray", link: "/app/tray", icon: FaShoppingBasket },
+    { title: "Profile", link: "/app/profile", icon: FaUserTie },
     {
       title: "Vendor",
       link: "/app/vendor",
+      icon: AiFillShop,
     },
   ].map((link) => {
     if (link.title.toLowerCase() === active.toLowerCase())
@@ -27,7 +31,7 @@ function NavBar({ active }) {
         </h2>
         <NavItems
           items={navLinks}
-          className="text-md font-medium text-gray-500 border-solid border-white border-r-4 hover:text-indigo-500 hover:bg-indigo-100 p-3"
+          className="text-md cursor-pointer font-medium text-gray-500 border-solid border-white border-r-4 hover:text-indigo-500 hover:bg-indigo-100 p-3"
         />
       </ul>
     </nav>

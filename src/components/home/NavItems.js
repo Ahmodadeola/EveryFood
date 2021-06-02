@@ -8,10 +8,20 @@ function NavItems({ items, className }) {
         allClasses = item.addStyle
           ? allClasses.concat(" " + item.addStyle)
           : className;
+        console.log(item.icon);
         return (
-          <li className={allClasses} key={idx}>
-            <a href={item.link}>{item.title}</a>
-          </li>
+          <a href={item.link} key={idx}>
+            <li className={allClasses}>
+              {item.icon && (
+                <item.icon
+                  className={`inline-block ml-3 mr-5 ${
+                    item.addStyle && "text-indigo-500"
+                  }`}
+                />
+              )}
+              {item.title}
+            </li>
+          </a>
         );
       })}
     </>
