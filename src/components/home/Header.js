@@ -16,6 +16,10 @@ function Header() {
         "transition ease-in duration-400 rounded p-3 font-bold hover:text-green-500 hover:bg-green-200 bg-green-500 text-white",
     },
   ];
+
+  const mobileLinks = navLinks
+    .slice(0, 3)
+    .concat({ title: "Sign up", link: "/auth/signup" });
   return (
     <header className="text-green-500 z-0 mb-5 fixed bg-white w-full top-0">
       <nav className="shadow-md flex items-center p-4">
@@ -33,7 +37,11 @@ function Header() {
           onClick={() => setOpen(!isOpen)}
           className="ml-auto md:hidden text-green-500 cursor-pointer"
         />
-        <MobileNavBar setOpen={setOpen} navLinks={navLinks} isOpen={isOpen} />
+        <MobileNavBar
+          setOpen={setOpen}
+          isOpen={isOpen}
+          navLinks={mobileLinks}
+        />
       </nav>
     </header>
   );

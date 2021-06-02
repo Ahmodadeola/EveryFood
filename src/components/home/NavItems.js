@@ -19,7 +19,7 @@ function NavItems({ items, className }) {
                   }`}
                 />
               )}
-              {item.title}
+              <span>{item.title}</span>
             </li>
           </a>
         );

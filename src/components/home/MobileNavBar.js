@@ -3,9 +3,6 @@ import { FaTimes } from "react-icons/fa";
 import NavItems from "./NavItems";
 
 const MobileNavBar = ({ isOpen = false, navLinks, setOpen = (f) => f }) => {
-  navLinks = navLinks
-    .slice(0, 3)
-    .concat({ title: "Sign up", link: "/auth/signup" });
   const mainClasses =
     `cursor-pointer w-full h-7 left-0 top-0 absolute border-indigo-20 md:hidden transform
   transition ease-in duration-400`.split();
