@@ -1,5 +1,6 @@
 import Login from "../../pages/auth/login";
 import Signup from "../../pages/auth/signup";
+import ForgotPassword from "../../pages/auth/forgot-password";
 
 const routes = [
   { name: "login", path: "/login", component: Login },
@@ -7,7 +8,7 @@ const routes = [
   {
     name: "forgot-password",
     path: "/forgot-password",
-    component: "forgot-password",
+    component: ForgotPassword,
   },
 ];
 export default routes;
