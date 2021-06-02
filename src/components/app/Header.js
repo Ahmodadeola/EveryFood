@@ -1,7 +1,13 @@
 import React, { useState } from "react";
 import { MdPerson, mdiFoo } from "react-icons/md";
 import { AiFillShop } from "react-icons/ai";
-import { FaBars, FaSearch, FaShoppingBasket, FaUtensils } from "react-icons/fa";
+import {
+  FaBars,
+  FaSearch,
+  FaShoppingBasket,
+  FaUtensils,
+  FaUserTie,
+} from "react-icons/fa";
 import SearchForm from "./SearchForm";
 import MobileNavBar from "../home/MobileNavBar";
 
@@ -12,7 +18,7 @@ function Header({ page }) {
   const navLinks = [
     { title: "Dishes", link: "/app/dishes", icon: FaUtensils },
     { title: "Tray", link: "/app/tray", icon: FaShoppingBasket },
-    { title: "Profile", link: "/app/profile", icon: FaUtensils },
+    { title: "Profile", link: "/app/profile", icon: FaUserTie },
     {
       title: "Vendor",
       link: "/app/vendor",
@@ -28,7 +34,7 @@ function Header({ page }) {
             onClick={() => toggle(true)}
             className="md:hidden text-green-400"
           />
-          <p className="text-lg text-green-400 font-medium ml-6">
+          <p title="page" className="text-lg text-green-400 font-medium ml-6">
             {page[0].toUpperCase() + page.slice(1)}
           </p>
           <FaSearch
