@@ -1,15 +1,11 @@
 import React, { useState } from "react";
 import { FaArrowLeft, FaSearch, FaTimes } from "react-icons/fa";
 import SearchResult from "./SearchResult";
+import useSearch from "../../hooks/useSearch";
 
 function SearchForm({ toggle }) {
-  const [keyword, setKey] = useState("");
-  const results = [
-    { dish: "Bread and Egg" },
-    { dish: "Chicken and Chips" },
-    { dish: "Burger" },
-    { dish: "Shawarma" },
-  ];
+  const { changeHandler, results, keyword } = useSearch();
+
   return (
     <div className="bg-green-300 w-full mx-auto p-4 relative text-white">
       <label htmlFor="search-form" className="invisible">
@@ -18,7 +14,7 @@ function SearchForm({ toggle }) {
       <input
         autoFocus
         id="search-form"
-        onChange={(e) => setKey(e.target.value)}
+        onChange={changeHandler}
         placeholder="Enter item..."
         type="text"
         className="left-11 bg-transparent outline-none h-5 w-5/6 absolute pl-3 py-3 text-white border-b-2 border-solid 
