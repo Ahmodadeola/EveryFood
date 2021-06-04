@@ -1,8 +1,8 @@
 import React from "react";
-import AppLayout from "../../layouts/appLayout";
-import SpagImg from "../../assets/images/spag2.jpg";
-import Spag from "../../assets/images/spag.jpg";
-import DishCard from "../../components/app/dishes/DishCard";
+import AppLayout from "../../../layouts/appLayout";
+import SpagImg from "../../../assets/images/spag2.jpg";
+import Spag from "../../../assets/images/spag.jpg";
+import DishCard from "../../../components/app/dishes/DishCard";
 
 function Dishes() {
   const dishes = [

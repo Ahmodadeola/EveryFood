@@ -3,7 +3,10 @@ import { FaMapMarker } from "react-icons/fa";
 
 function DishCard({ name, price, imgLink, scope }) {
   return (
-    <div className="md:mx-4 shadow h-30 rounded mb-10 cursor-pointer bg-white">
+    <div
+      className="md:mx-4 shadow h-30 border-2 border-solid 
+    border-transparent hover:border-green-300  rounded mb-10 cursor-pointer bg-white"
+    >
       <img src={imgLink} alt={name} className="h-40 w-full" />
       <p className="text-auto text-gray-600 text-medium text-center">{name}</p>
       <div className="flex justify-between p-4">

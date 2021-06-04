@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { FaArrowLeft, FaSearch, FaTimes } from "react-icons/fa";
+import React from "react";
+import { FaArrowLeft, FaTimes } from "react-icons/fa";
 import SearchResult from "./SearchResult";
 import useSearch from "../../hooks/useSearch";
 

@@ -1,4 +1,4 @@
-import react from "react";
+import React from "react";
 import { FaSearch } from "react-icons/fa";
 import useSearch from "../../hooks/useSearch";
 import SearchResult from "./SearchResult";

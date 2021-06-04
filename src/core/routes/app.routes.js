@@ -1,7 +1,8 @@
-import Dishes from "../../pages/app/dishes";
+import Dishes from "../../pages/app/dishes/dishes";
 import Profile from "../../pages/app/profile";
 import Tray from "../../pages/app/tray";
 import Vendor from "../../pages/app/vendor";
+import DishInfo from "../../pages/app/dishes/dish-info";
 
 const routes = [
   { name: "Dishes", path: "/dishes", component: Dishes },
@@ -11,6 +12,11 @@ const routes = [
     name: "Vendor",
     path: "/vendor",
     component: Vendor,
+  },
+  {
+    name: "DishInfo",
+    path: "/dishes/dish-info",
+    component: DishInfo,
   },
 ];
 export default routes;
