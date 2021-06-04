@@ -1,4 +1,10 @@
-import { screen, render, fireEvent } from "@testing-library/react";
+import {
+  screen,
+  render,
+  fireEvent,
+  getByText,
+  getAllByText,
+} from "@testing-library/react";
 import Dishes from "../../pages/app/dishes";
 
 describe("Dishes page test", () => {
@@ -23,11 +29,16 @@ describe("Dishes page test", () => {
   });
 
   test("Header data check", () => {
-    const { getByTitle, getByLabelText } = render(<Dishes />);
+    const { getByTitle, getByLabelText, getAllByText } = render(<Dishes />);
     const page = getByTitle("page");
     expect(page.textContent).toBe(links[0]);
     const searchIcon = document.querySelectorAll("header>div>svg")[1];
     fireEvent.click(searchIcon);
-    expect(getByLabelText("mobile search form")).toHaveFocus();
+    screen.debug();
+    // < medium screens search input test
+    const searchInput = getByLabelText("mobile search form");
+    expect(searchInput).toHaveFocus();
+    fireEvent.change(searchInput, { target: { value: "egg" } });
+    getAllByText(/egg/i);
   });
 });

@@ -26,6 +26,7 @@ const useSearch = () => {
     changeHandler: (e) => setKey(e.target.value),
     results,
     keyword,
+    reset: () => setKey(""),
   };
 };
 

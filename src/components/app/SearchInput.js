@@ -7,11 +7,11 @@ function SearchInput() {
   const { changeHandler, results, keyword } = useSearch();
   return (
     <div className="hidden md:inline-block relative">
-      <label htmlFor="search-form" className="invisible">
-        search form
+      <label htmlFor="md-search-form" className="invisible">
+        md search form
       </label>
       <input
-        id="search-form"
+        id="md-search-form"
         placeholder="Enter item..."
         onChange={changeHandler}
         className="outline-none border-solid border-2
