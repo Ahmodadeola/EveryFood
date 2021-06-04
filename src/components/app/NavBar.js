@@ -2,7 +2,6 @@ import React from "react";
 import NavItems from "../home/NavItems";
 import { FaUtensils, FaShoppingBasket, FaUserTie } from "react-icons/fa";
 import { AiFillShop } from "react-icons/ai";
-import { MdPortrait } from "react-icons/md";
 
 function NavBar({ active }) {
   const navLinks = [
@@ -24,7 +23,7 @@ function NavBar({ active }) {
   });
 
   return (
-    <nav className="hidden md:block absolute top-0 h-screen border-solid border-r-2 md:w-1/5">
+    <nav className="hidden md:block fixed top-0 h-screen border-solid border-r-2 md:w-1/5">
       <ul className="invisible md:visible flex flex-col py-6 space-y-5">
         <h2 className="text-2xl ml-2 text-green-600 font-bold pb-20">
           EveryFood
