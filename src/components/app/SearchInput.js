@@ -11,7 +11,7 @@ function SearchInput() {
         id="search-form"
         placeholder="Enter item..."
         className="outline-none border-solid border-2
-      border-green-500 rounded-md h-10 w-30 pl-3"
+      border-green-500 rounded-md h-10 w-30 pl-3 text-green-400"
       />
       <FaSearch size="20" className="absolute right-2 top-2 text-green-400" />
     </div>
