@@ -5,9 +5,9 @@ import Header from "../components/app/Header";
 function AppLayout({ children, page }) {
   return (
     <>
-      <NavBar active={page} />
+      <NavBar />
       <div className="md:w-4/5 md:float-right">
-        <Header page={page} />
+        <Header />
       </div>
 
       <main className="w-full md:w-4/5 md:float-right bg-gray-100">
