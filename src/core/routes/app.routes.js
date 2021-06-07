@@ -1,4 +1,4 @@
-import Dishes from "../../pages/app/dishes/dishes";
+import Dishes from "../../pages/app/dishes";
 import Profile from "../../pages/app/profile";
 import Tray from "../../pages/app/tray";
 import Vendor from "../../pages/app/vendor";

@@ -6,18 +6,25 @@ import {
   setCurrentPage,
   setActivePage,
 } from "../../../store/actions/appActions";
+import { setSelectedDish } from "../../../store/actions/dishActions";
+import { useSelector } from "react-redux";
 
-function DishInfo(props) {
+function DishInfo() {
   const Dispatch = useDispatch();
-  useEffect(() => {}, []);
+  useEffect(() => {
+    Dispatch(setCurrentPage("Dish Info"));
+    Dispatch(setActivePage("Dishes"));
+    setSelectedDish({ dish: "bread and egg" });
+  }, [Dispatch]);
+  const { selectedDish } = useSelector((state) => state.dish);
   return (
     <AppLayout page="dish info">
-      <div>
-        <div className="">
-          <img src={img} alt="food" />
+      <div className="h-screen">
+        <div className="h-1/3">
+          <img src={img} alt="food" className="w-full h-60 md:w-1/3" />
         </div>
         <div className="">
-          <p>{}</p>
+          <p>{selectedDish.dish}</p>
         </div>
       </div>
     </AppLayout>

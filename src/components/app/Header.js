@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import { MdPerson, mdiFoo } from "react-icons/md";
+import React, { useState } from "react";
 import { AiFillShop } from "react-icons/ai";
 import {
   FaBars,
@@ -29,7 +28,9 @@ function Header() {
     },
   ];
   return (
-    <header className={`md:w-full ${!search && "p-4"} shadow`}>
+    <header
+      className={`md:w-full ${!search && "p-4"} shadow fixed bg-white w-full`}
+    >
       {!search ? (
         <div className="flex justify-between items-center">
           {/* Desktop view */}

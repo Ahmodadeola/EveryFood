@@ -8,9 +8,19 @@ import {
   setCurrentPage,
   setActivePage,
 } from "../../../store/actions/appActions";
+import { setSelectedDish } from "../../../store/actions/dishActions";
+import { Link } from "react-router-dom";
 
 function Dishes() {
   const dispatch = useDispatch();
+
+  const setupInfo = () => {
+    dispatch(setSelectedDish({ dish: "Bread and Egg" }));
+    console.log("Done setting");
+    // debugger;
+    // window.location = "/app/dishes/dish-info";
+  };
+
   useEffect(() => {
     dispatch(setCurrentPage("Dishes"));
     dispatch(setActivePage("Dishes"));
@@ -63,7 +73,7 @@ function Dishes() {
     <AppLayout page="dishes">
       <div className="p-6 w-full grid md:grid-cols-3 lg:grid-cols-4">
         {dishes.map((dish, idx) => (
-          <DishCard {...dish} key={idx} />
+          <DishCard {...dish} key={idx} setupInfo={setupInfo} />
         ))}
       </div>
     </AppLayout>
