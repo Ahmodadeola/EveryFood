@@ -1,10 +1,27 @@
 import { render } from "@testing-library/react";
 import Dishes from "../../pages/app/dishes";
+import { Provider } from "react-redux";
+import { configureStore } from "@reduxjs/toolkit";
+import dishReducer from "../../store/reducers/dishesSlice";
+import { MemoryRouter } from "react-router-dom";
+import * as reactRedux from "react-redux";
+import Spag from "../../assets/images/spag.jpg";
+import SpagImg from "../../assets/images/spag2.jpg";
+import store from "../../store/store";
+
+const renderAll = () =>
+  render(
+    <Provider store={store}>
+      <MemoryRouter>
+        <Dishes />
+      </MemoryRouter>
+    </Provider>
+  );
 
 describe("Dishes page test", () => {
   const links = ["Dishes", "Tray", "Profile", "Vendor"];
   test("NavBar links check", () => {
-    const { getByText } = render(<Dishes />);
+    const { getByText } = renderAll();
     getByText("EveryFood");
 
     // links on desktop Navbar

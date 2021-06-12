@@ -9,7 +9,6 @@ import {
   setActivePage,
 } from "../../../store/actions/appActions";
 import { setSelectedDish } from "../../../store/actions/dishActions";
-import { Link } from "react-router-dom";
 
 function Dishes() {
   const dispatch = useDispatch();
