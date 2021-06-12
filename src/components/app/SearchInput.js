@@ -6,7 +6,7 @@ import SearchResult from "./SearchResult";
 function SearchInput() {
   const { changeHandler, results, keyword } = useSearch();
   return (
-    <div className="hidden md:inline-block relative">
+    <div className="hidden md:inline-block">
       <label htmlFor="md-search-form" className="invisible">
         md search form
       </label>

@@ -29,10 +29,10 @@ function Header() {
   ];
   return (
     <header
-      className={`md:w-full ${!search && "p-4"} shadow fixed bg-white w-full`}
+      className={`md:w-4/5 ${!search && "p-4"} fixed shadow bg-white w-full`}
     >
       {!search ? (
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center relative">
           {/* Desktop view */}
 
           {/*icons for Mobile view*/}
