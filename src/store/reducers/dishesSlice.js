@@ -28,8 +28,6 @@ const dishesSlice = createSlice({
 
     setSelectedDish(state, { payload }) {
       state.selectedDish = payload;
-      console.log("Set dish", payload);
-      console.log(state);
     },
   },
 });

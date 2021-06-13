@@ -16,8 +16,6 @@ function Dishes() {
   const setupInfo = () => {
     dispatch(setSelectedDish({ dish: "Bread and Egg" }));
     console.log("Done setting");
-    // debugger;
-    // window.location = "/app/dishes/dish-info";
   };
 
   useEffect(() => {
