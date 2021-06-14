@@ -3,7 +3,7 @@ import AppLayout from "../../../layouts/appLayout";
 import SpagImg from "../../../assets/images/spag2.jpg";
 import Spag from "../../../assets/images/spag.jpg";
 import DishCard from "../../../components/app/dishes/DishCard";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
   setCurrentPage,
   setActivePage,
@@ -13,8 +13,8 @@ import { setSelectedDish } from "../../../store/actions/dishActions";
 function Dishes() {
   const dispatch = useDispatch();
 
-  const setupInfo = () => {
-    dispatch(setSelectedDish({ dish: "Bread and Egg" }));
+  const setupInfo = (dish) => {
+    dispatch(setSelectedDish(dish));
     console.log("Done setting");
   };
 
@@ -24,53 +24,12 @@ function Dishes() {
     console.log("called dispatch");
   }, [dispatch]);
 
-  const dishes = [
-    { imgLink: SpagImg, price: 600, name: "Spagetti", scope: "Ogun" },
-    { imgLink: Spag, price: 600, name: "Spagetti", scope: "Ogun" },
-    {
-      imgLink: SpagImg,
-      price: 1600,
-      name: "Chicken and Chips",
-      scope: "Lagos",
-    },
-    { imgLink: Spag, price: 600, name: "Spagetti", scope: "Ogun" },
-    {
-      imgLink: SpagImg,
-      price: 600,
-      name: "Fried Rice and Chicken",
-      scope: "Ogun",
-    },
-    {
-      imgLink: Spag,
-      price: 600,
-      name: "Beans and Dodo",
-      scope: "Ebute Meta",
-    },
-    {
-      imgLink: SpagImg,
-      price: 1600,
-      name: "Chicken and Chips",
-      scope: "Lagos",
-    },
-    { imgLink: Spag, price: 600, name: "Spagetti", scope: "Ogun" },
-    {
-      imgLink: SpagImg,
-      price: 600,
-      name: "Fried Rice and Chicken",
-      scope: "Ogun",
-    },
-    {
-      imgLink: Spag,
-      price: 600,
-      name: "Beans and Dodo",
-      scope: "Ebute Meta",
-    },
-  ];
+  const { dishes } = useSelector((state) => state.dish);
   return (
     <AppLayout page="dishes">
       <div className="p-6 w-full grid md:grid-cols-3 lg:grid-cols-4">
         {dishes.map((dish, idx) => (
-          <DishCard {...dish} key={idx} setupInfo={setupInfo} />
+          <DishCard {...dish} key={idx} setupInfo={() => setupInfo(dish)} />
         ))}
       </div>
     </AppLayout>

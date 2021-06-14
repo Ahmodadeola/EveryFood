@@ -1,19 +1,79 @@
 import { createSlice } from "@reduxjs/toolkit";
+import SpagImg from "../../assets/images/spag2.jpg";
+import Spag from "../../assets/images/spag.jpg";
 
 const initialState = {
   dishes: [
-    { dish: "Bread and Egg" },
-    { dish: "Chicken and Chips" },
-    { dish: "Beans and Dodo" },
-    { dish: "Shawarma" },
-    { dish: "Noodles and fried egg" },
-    { dish: "Sandwich" },
-    { dish: "Burger" },
-
-    { dish: "Fried rice and chicken" },
-    { dish: "Spaghetti and chicken" },
-    { dish: "Yam and fried egg" },
-    { dish: "Toast bread" },
+    {
+      imgLink: SpagImg,
+      price: 600,
+      name: "Spagetti",
+      vendor: "Ola Ola Foods",
+      scope: "Ogun",
+    },
+    {
+      imgLink: Spag,
+      price: 600,
+      name: "Spagetti",
+      vendor: "Ajoke Fast Food",
+      scope: "Ogun",
+    },
+    {
+      imgLink: SpagImg,
+      price: 1600,
+      name: "Chicken and Chips",
+      vendor: "Vine restaurant",
+      scope: "Lagos",
+    },
+    {
+      imgLink: Spag,
+      price: 600,
+      name: "Spagetti",
+      vendor: "Ola Ola Foods",
+      scope: "Ogun",
+    },
+    {
+      imgLink: SpagImg,
+      price: 600,
+      name: "Fried Rice and Chicken",
+      vendor: "Iya moria buka",
+      scope: "Ogun",
+    },
+    {
+      imgLink: Spag,
+      price: 600,
+      name: "Beans and Dodo",
+      vendor: "BukaHut Foods",
+      scope: "Ebute Meta",
+    },
+    {
+      imgLink: SpagImg,
+      price: 1600,
+      name: "Chicken and Chips",
+      vendor: "MamaDee food",
+      scope: "Lagos",
+    },
+    {
+      imgLink: Spag,
+      price: 600,
+      name: "Spagetti",
+      vendor: "Ola Ola Foods",
+      scope: "Ogun",
+    },
+    {
+      imgLink: SpagImg,
+      price: 600,
+      name: "Fried Rice and Chicken",
+      vendor: "Fresh&Fast restaurant",
+      scope: "Ogun",
+    },
+    {
+      imgLink: Spag,
+      price: 600,
+      name: "Beans and Dodo",
+      vendor: "Mr. Biggs",
+      scope: "Ebute Meta",
+    },
   ],
   selectedDish: {},
 };
