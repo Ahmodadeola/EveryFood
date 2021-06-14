@@ -1,4 +1,4 @@
-import react from "react";
+import React from "react";
 import { FaSearch } from "react-icons/fa";
 import useSearch from "../../hooks/useSearch";
 import SearchResult from "./SearchResult";
@@ -6,12 +6,12 @@ import SearchResult from "./SearchResult";
 function SearchInput() {
   const { changeHandler, results, keyword } = useSearch();
   return (
-    <div className="hidden md:inline-block relative">
-      <label htmlFor="search-form" className="invisible">
-        search form
+    <div className="hidden md:inline-block">
+      <label htmlFor="md-search-form" className="invisible">
+        md search form
       </label>
       <input
-        id="search-form"
+        id="md-search-form"
         placeholder="Enter item..."
         onChange={changeHandler}
         className="outline-none border-solid border-2

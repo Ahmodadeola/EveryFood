@@ -3,7 +3,7 @@ import { Switch, BrowserRouter as Router, Redirect } from "react-router-dom";
 import ProtectedRoute from "./core/routes/ProtectedRoute";
 import AppRoutes from "./core/routes/app.routes";
 import AuthRoutes from "./core/routes/auth.routes";
-
+import Detail from "./pages/app/dishes/dish-info";
 import Home from "./pages/index";
 
 function App() {
@@ -11,6 +11,12 @@ function App() {
     <Router>
       <Switch>
         <Redirect exact from="/" to="/home" />
+        <ProtectedRoute
+          path="/app/dishes/dish-info"
+          condition={true}
+          component={Detail}
+          redirectPathname="/home"
+        />
         {AuthRoutes.map((route, idx) => (
           <ProtectedRoute
             key={idx}
@@ -20,6 +26,7 @@ function App() {
             redirectPathname="/auth"
           />
         ))}
+
         {AppRoutes.map((route, idx) => (
           <ProtectedRoute
             key={idx}

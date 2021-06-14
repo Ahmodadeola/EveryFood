@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { MdPerson, mdiFoo } from "react-icons/md";
 import { AiFillShop } from "react-icons/ai";
 import {
   FaBars,
@@ -11,10 +10,12 @@ import {
 import SearchForm from "./SearchForm";
 import SearchInput from "./SearchInput";
 import MobileNavBar from "../home/MobileNavBar";
+import { useSelector } from "react-redux";
 
-function Header({ page }) {
+function Header() {
   const [open, toggle] = useState(false);
   const [search, toggleSearch] = useState(false);
+  const { currentPage } = useSelector((state) => state.app);
 
   const navLinks = [
     { title: "Dishes", link: "/app/dishes", icon: FaUtensils },
@@ -27,9 +28,11 @@ function Header({ page }) {
     },
   ];
   return (
-    <header className={`md:w-full ${!search && "p-4"} shadow`}>
+    <header
+      className={`md:w-4/5 ${!search && "p-4"} fixed shadow bg-white w-full`}
+    >
       {!search ? (
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center relative">
           {/* Desktop view */}
 
           {/*icons for Mobile view*/}
@@ -38,8 +41,11 @@ function Header({ page }) {
             onClick={() => toggle(true)}
             className="md:hidden text-green-400 cursor-pointer"
           />
-          <p title="page" className="text-lg text-green-400 font-medium ml-6">
-            {page[0].toUpperCase() + page.slice(1)}
+          <p
+            title="currentPage"
+            className="text-lg text-green-400 font-medium ml-6"
+          >
+            {currentPage[0].toUpperCase() + currentPage.slice(1)}
           </p>
           <SearchInput />
           <FaSearch

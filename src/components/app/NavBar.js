@@ -2,8 +2,10 @@ import React from "react";
 import NavItems from "../home/NavItems";
 import { FaUtensils, FaShoppingBasket, FaUserTie } from "react-icons/fa";
 import { AiFillShop } from "react-icons/ai";
+import { useSelector } from "react-redux";
 
-function NavBar({ active }) {
+function NavBar() {
+  const { active } = useSelector((state) => state.app);
   const navLinks = [
     { title: "Dishes", link: "/app/dishes", icon: FaUtensils },
     { title: "Tray", link: "/app/tray", icon: FaShoppingBasket },
