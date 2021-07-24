@@ -75,7 +75,7 @@ const initialState = {
       scope: "Ebute Meta",
     },
   ],
-  selectedDish: {},
+  selectedDish: null,
 };
 
 const dishesSlice = createSlice({

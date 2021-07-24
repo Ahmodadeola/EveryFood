@@ -5,29 +5,32 @@ import {
   setCurrentPage,
   setActivePage,
 } from "../../../store/actions/appActions";
-import { setSelectedDish } from "../../../store/actions/dishActions";
 import { useSelector } from "react-redux";
 import { FaPlusCircle, FaMinusCircle } from "react-icons/fa";
+import { Redirect } from "react-router";
 
 function DishInfo() {
   const Dispatch = useDispatch();
-  useEffect(() => {
-    Dispatch(setCurrentPage("Dish Info"));
-    Dispatch(setActivePage("Dishes"));
-    setSelectedDish({ dish: "bread and egg" });
-    window.scrollTo(0, 0);
-  }, [Dispatch]);
   const { selectedDish } = useSelector((state) => state.dish);
   const [units, updateUnit] = useReducer(
     (unit, action = "increment") =>
       action === "increment" ? ++unit : unit > 0 ? --unit : 0,
     1
   );
+
+  useEffect(() => {
+    Dispatch(setCurrentPage("Dish Info"));
+    Dispatch(setActivePage("Dishes"));
+    window.scrollTo(0, 0);
+  }, [Dispatch]);
+
+  if (!selectedDish) return <Redirect to="/app/dishes" />;
+
   return (
     <div className="md:mx-auto md:flex md:space-x-8 md:w-5/6 lg:w-3/5">
       <div className="md:w-1/2">
         <img
-          src={img}
+          src={selectedDish.imgLink}
           alt="food"
           className="w-full h-60 md:h-80 md:w-full md:mt-5"
         />
