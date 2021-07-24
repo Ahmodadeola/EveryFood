@@ -31,8 +31,11 @@ function Header() {
   return (
     <>
       <BackDrop show={open} close={() => toggle(!open)} />
+      <MobileNavBar navLinks={navLinks} isOpen={open} setOpen={toggle} />
       <header
-        className={`md:w-4/5 ${!search && "p-4"} fixed shadow bg-white w-full`}
+        className={`md:w-4/5 ${
+          !search && "p-4"
+        } z-0 fixed shadow bg-white w-full`}
       >
         {!search ? (
           <div className="flex justify-between items-center relative">
@@ -62,7 +65,6 @@ function Header() {
           <SearchForm toggle={() => toggleSearch(false)} />
         )}
       </header>
-      <MobileNavBar navLinks={navLinks} isOpen={open} setOpen={toggle} />
     </>
   );
 }
