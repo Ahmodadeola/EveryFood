@@ -28,37 +28,40 @@ function Header() {
     },
   ];
   return (
-    <header
-      className={`md:w-4/5 ${!search && "p-4"} fixed shadow bg-white w-full`}
-    >
-      {!search ? (
-        <div className="flex justify-between items-center relative">
-          {/* Desktop view */}
+    <>
+      <header
+        className={`md:w-4/5 ${!search && "p-4"} fixed shadow bg-white w-full`}
+      >
+        {!search ? (
+          <div className="flex justify-between items-center relative">
+            {/* Desktop view */}
 
-          {/*icons for Mobile view*/}
-          <FaBars
-            size="20"
-            onClick={() => toggle(true)}
-            className="md:hidden text-green-400 cursor-pointer"
-          />
-          <p
-            title="currentPage"
-            className="text-lg text-green-400 font-medium ml-6"
-          >
-            {currentPage && currentPage[0].toUpperCase() + currentPage.slice(1)}
-          </p>
-          <SearchInput />
-          <FaSearch
-            size="20"
-            className="text-green-400 md:hidden cursor-pointer"
-            onClick={() => toggleSearch(true)}
-          />
-          <MobileNavBar navLinks={navLinks} isOpen={open} setOpen={toggle} />
-        </div>
-      ) : (
-        <SearchForm toggle={() => toggleSearch(false)} />
-      )}
-    </header>
+            {/*icons for Mobile view*/}
+            <FaBars
+              size="20"
+              onClick={() => toggle(true)}
+              className="md:hidden text-green-400 cursor-pointer"
+            />
+            <p
+              title="currentPage"
+              className="text-lg text-green-400 font-medium ml-6"
+            >
+              {currentPage &&
+                currentPage[0].toUpperCase() + currentPage.slice(1)}
+            </p>
+            <SearchInput />
+            <FaSearch
+              size="20"
+              className="text-green-400 md:hidden cursor-pointer"
+              onClick={() => toggleSearch(true)}
+            />
+          </div>
+        ) : (
+          <SearchForm toggle={() => toggleSearch(false)} />
+        )}
+      </header>
+      <MobileNavBar navLinks={navLinks} isOpen={open} setOpen={toggle} />
+    </>
   );
 }
 
