@@ -24,7 +24,7 @@ function DishInfo() {
     1
   );
   return (
-    <div className="h-screen md:mx-auto md:flex md:space-x-8 md:w-2/3 lg:w-3/5">
+    <div className="md:mx-auto md:flex md:space-x-8 md:w-2/3 lg:w-3/5">
       <div className="md:w-1/2">
         <img
           src={img}
