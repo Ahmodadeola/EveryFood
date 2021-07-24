@@ -10,6 +10,7 @@ import {
 import SearchForm from "./SearchForm";
 import SearchInput from "./SearchInput";
 import MobileNavBar from "../home/MobileNavBar";
+import BackDrop from "../ui/BackDrop";
 import { useSelector } from "react-redux";
 
 function Header() {
@@ -29,6 +30,7 @@ function Header() {
   ];
   return (
     <>
+      <BackDrop show={open} close={() => toggle(!open)} />
       <header
         className={`md:w-4/5 ${!search && "p-4"} fixed shadow bg-white w-full`}
       >

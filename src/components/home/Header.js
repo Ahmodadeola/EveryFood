@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FaBars } from "react-icons/fa";
 import MobileNavBar from "./MobileNavBar";
+import BackDrop from "../ui/BackDrop";
 import NavItems from "./NavItems";
 
 function Header() {
@@ -22,6 +23,7 @@ function Header() {
     .concat({ title: "Sign up", link: "/auth/signup" });
   return (
     <header className="text-green-500 z-0 mb-5 fixed bg-white w-full top-0">
+      <BackDrop show={isOpen} close={() => setOpen(!isOpen)} />
       <nav className="shadow-md flex items-center p-4">
         <div className="ml-3 md:ml-2 md:text-left">
           <h2 className="text-left text-xl font-bold">EveryFood</h2>
