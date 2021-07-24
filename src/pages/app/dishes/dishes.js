@@ -1,5 +1,4 @@
 import React from "react";
-import AppLayout from "../../../layouts/appLayout";
 import SpagImg from "../../../assets/images/spag2.jpg";
 import Spag from "../../../assets/images/spag.jpg";
 import DishCard from "../../../components/app/dishes/DishCard";
@@ -48,13 +47,11 @@ function Dishes() {
     },
   ];
   return (
-    <AppLayout page="dishes">
-      <div className="p-6 w-full grid md:grid-cols-3 lg:grid-cols-4">
-        {dishes.map((dish, idx) => (
-          <DishCard {...dish} key={idx} />
-        ))}
-      </div>
-    </AppLayout>
+    <div className="p-6 w-full grid md:grid-cols-3 lg:grid-cols-4">
+      {dishes.map((dish, idx) => (
+        <DishCard {...dish} key={idx} />
+      ))}
+    </div>
   );
 }
 

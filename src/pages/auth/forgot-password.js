@@ -13,11 +13,7 @@ function ForgotPassword() {
       ],
     },
   };
-  return (
-    <AuthLayout>
-      <InputForm forms={forms} mode="forgot-password" />
-    </AuthLayout>
-  );
+  return <InputForm forms={forms} mode="forgot-password" />;
 }
 
 export default memo(ForgotPassword);

@@ -3,8 +3,10 @@ import { Switch, BrowserRouter as Router, Redirect } from "react-router-dom";
 import ProtectedRoute from "./core/routes/ProtectedRoute";
 import AppRoutes from "./core/routes/app.routes";
 import AuthRoutes from "./core/routes/auth.routes";
-import Detail from "./pages/app/dishes/dish-info";
+import DishDetails from "./pages/app/dishes/dish-info";
 import Home from "./pages/index";
+import AuthLayout from "./layouts/authLayout";
+import AppLayout from "./layouts/appLayout";
 
 function App() {
   return (
@@ -12,12 +14,19 @@ function App() {
       <Switch>
         <Redirect exact from="/" to="/home" />
         <ProtectedRoute
-          path="/app/dishes/dish-info"
+          path="/app"
           condition={true}
-          component={Detail}
+          component={AppLayout}
           redirectPathname="/home"
         />
-        {AuthRoutes.map((route, idx) => (
+        <ProtectedRoute
+          path={`/auth`}
+          condition={true}
+          component={AuthLayout}
+          redirectPathname="/auth"
+        />
+
+        {/* {AuthRoutes.map((route, idx) => (
           <ProtectedRoute
             key={idx}
             path={`/auth${route.path}`}
@@ -35,7 +44,7 @@ function App() {
             component={route.component}
             redirectPathname="/auth"
           />
-        ))}
+        ))}*/}
         <ProtectedRoute
           path="/home"
           condition={true}
@@ -45,12 +54,6 @@ function App() {
               <Home />
             </div>
           )}
-        />
-
-        <ProtectedRoute
-          path={/^(\/auth)/}
-          condition={false}
-          redirectPathname="/"
         />
       </Switch>
     </Router>

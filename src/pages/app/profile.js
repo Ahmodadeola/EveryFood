@@ -11,11 +11,9 @@ function Profile() {
     dispatch(setActivePage("Profile"));
   }, [dispatch]);
   return (
-    <AppLayout page="profile">
-      <main>
-        <p>This is the profile page</p>
-      </main>
-    </AppLayout>
+    <main>
+      <p>This is the profile page</p>
+    </main>
   );
 }
 
