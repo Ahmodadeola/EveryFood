@@ -1,24 +1,30 @@
-import React from "react";
+import React, { memo } from "react";
 import NavBar from "../components/app/NavBar";
 import Header from "../components/app/Header";
+import DishInfo from "../pages/app/dishes/dish-info";
 import { Switch, Redirect, Route } from "react-router";
 import appRoutes from "../core/routes/app.routes";
 import ProtectedRoute from "../core/routes/ProtectedRoute";
 
-function AppLayout({ children, page }) {
+function AppLayout() {
   return (
     <>
       <NavBar />
       <div className="md:w-4/5 md:float-right">
         <Header />
       </div>
-
       <main className="w-full md:w-4/5 md:float-right bg-gray-100 pt-20">
         <Switch>
           <Route
             exact
-            path="/auth"
-            render={() => <Redirect to="/auth/login" />}
+            path="/app"
+            render={() => <Redirect to="/app/dishes" />}
+          />
+          <ProtectedRoute
+            path={`/app/dishes/dish-info`}
+            condition={true}
+            component={DishInfo}
+            redirectPathname="/auth"
           />
           {appRoutes.map((route, idx) => (
             <ProtectedRoute
@@ -35,4 +41,4 @@ function AppLayout({ children, page }) {
   );
 }
 
-export default AppLayout;
+export default memo(AppLayout);

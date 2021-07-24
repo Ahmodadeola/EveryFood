@@ -45,7 +45,7 @@ function Header() {
             title="currentPage"
             className="text-lg text-green-400 font-medium ml-6"
           >
-            {currentPage[0].toUpperCase() + currentPage.slice(1)}
+            {currentPage && currentPage[0].toUpperCase() + currentPage.slice(1)}
           </p>
           <SearchInput />
           <FaSearch

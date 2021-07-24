@@ -1,6 +1,7 @@
 import React, { memo } from "react";
 import Input from "./Input";
 import useForm from "../../hooks/useForm";
+import { Link } from "react-router-dom";
 
 // Note: Do not pass functions that can cause rerender as prop to a component invoking it in a
 // rerendering hook like useEffect, only pass memoized functions(using callback) in that scenerio
@@ -58,15 +59,15 @@ function InputForm({ forms, mode = "login" }) {
         </button>
         <p className="text-sm font-bold text-gray-500">
           {otherAuthText}
-          <a href={`/auth/${otherAuthLink}`} className="text-green-700 ml-1">
+          <Link to={`/auth/${otherAuthLink}`} className="text-green-700 ml-1">
             {otherAuthLink}
-          </a>
+          </Link>
         </p>
         {mode !== "forgot-password" && (
           <p className="text-sm font-bold text-gray-500">
-            <a href={`/auth/forgot-password`} className="text-green-700 ml-1">
+            <Link to={`/auth/forgot-password`} className="text-green-700 ml-1">
               forgot password
-            </a>
+            </Link>
           </p>
         )}
       </form>

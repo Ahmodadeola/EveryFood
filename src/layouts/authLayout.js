@@ -4,7 +4,7 @@ import Footer from "../components/home/footer";
 import authRoutes from "../core/routes/auth.routes";
 import ProtectedRoute from "../core/routes/ProtectedRoute";
 
-function AuthLayout({ children }) {
+function AuthLayout() {
   return (
     <>
       <div className="flex justify-center items-center bg-green-500 min-h-screen p-6">

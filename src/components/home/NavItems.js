@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function NavItems({ items, className }) {
   let allClasses = className;
@@ -9,7 +10,7 @@ function NavItems({ items, className }) {
           ? allClasses.concat(" " + item.addStyle)
           : className;
         return (
-          <a href={item.link} key={idx}>
+          <Link to={item.link} key={idx}>
             <li className={allClasses}>
               {item.icon && (
                 <item.icon
@@ -20,7 +21,7 @@ function NavItems({ items, className }) {
               )}
               <span>{item.title}</span>
             </li>
-          </a>
+          </Link>
         );
       })}
     </>

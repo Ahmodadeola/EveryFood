@@ -1,8 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  currentPage: "dishes",
-  active: "dishes",
+  currentPage: "",
+  active: "",
 };
 
 const AppSlice = createSlice({
