@@ -26,13 +26,29 @@ describe("app layout test", () => {
     );
     const page = getByTitle("currentPage");
     expect(page.textContent).toBe("");
+
+    // >= medium screens search input
+    const searchInput = getByLabelText("md search form");
+    fireEvent.focus(searchInput);
+
+    // The values and results are based on the initially set dishes state in store
+    fireEvent.change(searchInput, { target: { value: "egg" } });
+    getAllByText(/item not found/i);
+
+    fireEvent.change(searchInput, { target: { value: "beans" } });
+    getAllByText(/beans/i);
+
+    // < medium screens search input test
     const searchIcon = document.querySelectorAll("header>div>svg")[1];
     fireEvent.click(searchIcon);
-    screen.debug();
-    // < medium screens search input test
-    const searchInput = getByLabelText("mobile search form");
-    expect(searchInput).toHaveFocus();
-    fireEvent.change(searchInput, { target: { value: "egg" } });
-    getAllByText(/egg/i);
+    const searchForm = getByLabelText("mobile search form");
+    expect(searchForm).toHaveFocus();
+
+    // The values and results are based on the initially set dishes state in store
+    fireEvent.change(searchForm, { target: { value: "egg" } });
+    getAllByText(/item not found/i);
+
+    fireEvent.change(searchForm, { target: { value: "beans" } });
+    getAllByText(/beans/i);
   });
 });
