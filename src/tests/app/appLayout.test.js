@@ -1,7 +1,5 @@
-import React, { screen, render, fireEvent } from "@testing-library/react";
-import Dishes from "../../pages/app/dishes";
+import React, { screen, fireEvent } from "@testing-library/react";
 import AppLayout from "../../layouts/appLayout";
-import { Provider } from "react-redux";
 import renderAll from "../TestHOC/renderWithAll";
 
 describe("app layout test", () => {
