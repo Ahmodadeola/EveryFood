@@ -1,5 +1,6 @@
 import React, { screen, render, fireEvent } from "@testing-library/react";
 import Dishes from "../../pages/app/dishes";
+import AppLayout from "../../layouts/appLayout";
 import { Provider } from "react-redux";
 import { configureStore } from "@reduxjs/toolkit";
 import dishReducer from "../../store/reducers/dishesSlice";
@@ -32,7 +33,9 @@ const renderAll = () =>
   render(
     <Provider store={store}>
       <MemoryRouter>
-        <Dishes />
+        <AppLayout>
+          <Dishes />
+        </AppLayout>
       </MemoryRouter>
     </Provider>
   );

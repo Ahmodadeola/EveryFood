@@ -14,18 +14,21 @@ function InputForm({ forms, mode = "login" }) {
   const modeProps = {
     login: {
       btnText: "Login",
+      btnLink: "/app",
       otherAuthLink: "signup",
       otherAuthText: "Don't have an account yet?",
       headText: "User Login",
     },
     signup: {
       btnText: "Submit",
+      btnlink: "/app",
       otherAuthLink: "login",
       otherAuthText: "Have an account already?",
       headText: "Create account",
     },
     "forgot-password": {
       btnText: "Submit",
+      btnlink: "/app",
       headText: "Recover password",
       otherAuthText: "Back to ",
       otherAuthLink: "login",
@@ -33,7 +36,8 @@ function InputForm({ forms, mode = "login" }) {
   };
 
   // extract page texts
-  const { btnText, otherAuthLink, otherAuthText, headText } = modeProps[mode];
+  const { btnText, btnLink, otherAuthLink, otherAuthText, headText } =
+    modeProps[mode];
 
   return (
     <div className="py-8 h-full text-center">
@@ -50,13 +54,15 @@ function InputForm({ forms, mode = "login" }) {
             key={idx}
           />
         ))}
+
         <button
           disabled={!valid}
           className="btn-custom mx-auto disabled:bg-green-100 disabled:cursor-none"
           onClick={submitForm}
         >
-          {btnText}
+          <Link to={btnLink}>{btnText}</Link>
         </button>
+
         <p className="text-sm font-bold text-gray-500">
           {otherAuthText}
           <Link to={`/auth/${otherAuthLink}`} className="text-green-700 ml-1">
