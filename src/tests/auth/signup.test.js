@@ -1,9 +1,10 @@
-import { fireEvent, getByText, render } from "@testing-library/react";
+import { fireEvent, screen } from "@testing-library/react";
 import Signup from "../../pages/auth/signup";
+import renderAll from "../TestHOC/renderWithAll";
 
 describe("Signup page", () => {
   test("inputs, labels and submit button check", () => {
-    const { getByLabelText, getByText } = render(<Signup />);
+    const { getByLabelText, getByText } = renderAll(<Signup />);
     ["Email", "First name", "Last name", "Password"].forEach((name) => {
       fireEvent.change(getByLabelText(name), {
         target: { value: "ahmo@xyz.com" },
@@ -14,7 +15,7 @@ describe("Signup page", () => {
   });
 
   test("forgot password and login links check", () => {
-    const { getByText } = render(<Signup />);
+    const { getByText } = renderAll(<Signup />);
     expect(getByText("login")).toHaveAttribute("href", "/auth/login");
     expect(getByText("forgot password")).toHaveAttribute(
       "href",
@@ -23,8 +24,8 @@ describe("Signup page", () => {
   });
 
   test("form validation check", () => {
-    const { getByLabelText, getByText } = render(<Signup />);
-    expect(getByText("Submit")).toHaveAttribute("disabled");
+    const { getByLabelText, getByTestId } = renderAll(<Signup />);
+    expect(getByTestId("submit")).toHaveAttribute("disabled");
     ["Email", "First name", "Last name", "Password"].forEach((name) => {
       const input = getByLabelText(name);
       fireEvent.focus(input);
