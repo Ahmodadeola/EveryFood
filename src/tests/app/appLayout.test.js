@@ -28,6 +28,7 @@ describe("app layout test", () => {
     expect(page.textContent).toBe("");
     const searchIcon = document.querySelectorAll("header>div>svg")[1];
     fireEvent.click(searchIcon);
+    screen.debug();
     // < medium screens search input test
     const searchInput = getByLabelText("mobile search form");
     expect(searchInput).toHaveFocus();

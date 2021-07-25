@@ -1,6 +1,4 @@
 import React, { useEffect } from "react";
-import SpagImg from "../../../assets/images/spag2.jpg";
-import Spag from "../../../assets/images/spag.jpg";
 import DishCard from "../../../components/app/dishes/DishCard";
 import { useDispatch, useSelector } from "react-redux";
 import {

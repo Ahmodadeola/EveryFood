@@ -7,14 +7,14 @@ const initialState = {
     {
       imgLink: SpagImg,
       price: 600,
-      name: "Spagetti",
+      name: "Amala and Efo Riro",
       vendor: "Ola Ola Foods",
       scope: "Ogun",
     },
     {
       imgLink: Spag,
       price: 600,
-      name: "Spagetti",
+      name: "Yam and egg",
       vendor: "Ajoke Fast Food",
       scope: "Ogun",
     },
@@ -28,7 +28,7 @@ const initialState = {
     {
       imgLink: Spag,
       price: 600,
-      name: "Spagetti",
+      name: "Bread and Beans",
       vendor: "Ola Ola Foods",
       scope: "Ogun",
     },

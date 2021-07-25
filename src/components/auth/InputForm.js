@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 // Note: Do not pass functions that can cause rerender as prop to a component invoking it in a
 // rerendering hook like useEffect, only pass memoized functions(using callback) in that scenerio
 
-function InputForm({ forms, mode = "login" }) {
+function InputForm({ forms = {}, mode = "login" }) {
   // extract form states and functions
   const { setFormData, submitForm, valid } = useForm(mode);
 
@@ -21,14 +21,14 @@ function InputForm({ forms, mode = "login" }) {
     },
     signup: {
       btnText: "Submit",
-      btnlink: "/app",
+      btnLink: "/app",
       otherAuthLink: "login",
       otherAuthText: "Have an account already?",
       headText: "Create account",
     },
     "forgot-password": {
       btnText: "Submit",
-      btnlink: "/app",
+      btnLink: "/app",
       headText: "Recover password",
       otherAuthText: "Back to ",
       otherAuthLink: "login",
