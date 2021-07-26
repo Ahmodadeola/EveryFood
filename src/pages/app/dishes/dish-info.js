@@ -27,19 +27,23 @@ function DishInfo() {
   if (!selectedDish) return <Redirect to="/app/dishes" />;
 
   return (
-    <div className="md:mx-auto md:flex md:space-x-8 md:w-5/6 lg:w-3/5">
-      <div className="md:w-1/2">
+    <div className="md:mx-auto  md:flex md:space-x-8 md:w-5/6 lg:w-3/5">
+      <div className="md:w-1/2 h-60 md:h-80">
         <img
+          style={{
+            width: "100%",
+            height: "100%",
+          }}
           src={selectedDish.imgLink}
           alt="food"
-          className="w-full h-60 md:h-80 md:w-full md:mt-5 object-cover rounded-lg"
+          className="w-full md:w-full md:mt-5 object-cover rounded-lg"
         />
       </div>
       <div className="md:w-1/2 p-4 md:p-auto">
         <h2 className="bg-green-400 p-2 text-xl text-center text-white mb-4 font-bold">
           {selectedDish.name}
         </h2>
-        <p className="text-gray-600 md:text-base text-sm">
+        <p className="text-gray-600 md:text-base text-sm font-medium">
           Delicious and finely garnished aganyin beans with a tantalizing pepper
           stew at the top, enjoy every bits.
         </p>
