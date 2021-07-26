@@ -56,7 +56,7 @@ function InputForm({ forms = {}, mode = "login" }) {
         ))}
 
         <button
-          data-testId="submit"
+          data-testid="submit"
           disabled={!valid}
           className="btn-custom mx-auto disabled:bg-green-100 disabled:cursor-none"
           onClick={submitForm}
