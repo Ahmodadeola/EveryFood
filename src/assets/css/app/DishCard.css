@@ -1,5 +1,9 @@
 .card-img-container {
-  height: 10em;
+  height: 10rem;
+}
+
+.dishcard-container {
+  height: 14em;
 }
 
 .card-img {

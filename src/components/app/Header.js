@@ -35,7 +35,7 @@ function Header() {
       <header
         className={`md:w-4/5 ${
           !search && "p-4"
-        } z-0 fixed shadow bg-white w-full`}
+        } z-10 fixed shadow bg-white w-full`}
       >
         {!search ? (
           <div className="flex justify-between items-center relative">

@@ -43,7 +43,7 @@ function DishInfo() {
         <h2 className="bg-green-400 p-2 text-xl text-center text-white mb-4 font-bold">
           {selectedDish.name}
         </h2>
-        <p className="text-gray-600 md:text-base text-sm font-medium">
+        <p className="text-gray-600 text-sm font-medium">
           Delicious and finely garnished aganyin beans with a tantalizing pepper
           stew at the top, enjoy every bits.
         </p>
