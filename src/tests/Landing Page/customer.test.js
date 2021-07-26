@@ -1,11 +1,13 @@
-import { render } from "@testing-library/react";
-import Home from "../../pages/index";
+import Customer from "../../components/home/Customer";
+import renderWithRouter from "../TestHOC/renderWithRouter";
 
 describe("Landing page tests", () => {
-  const { queryAllByText } = render(<Home />);
-
-  test("Header elements", () => {
-    queryAllByText("EveryFood");
-    queryAllByText("Where food lovers meet food makers");
+  const { getAllByText } = renderWithRouter(<Customer />);
+  test("Customer component test", () => {
+    const texts = [
+      "Want something tasty?",
+      "EveryFood offers you a plethora of tasty dishes from different food vendors across different locations delivered to you in a jiff(We can't teleport though)",
+    ];
+    texts.forEach((text) => getAllByText(text));
   });
 });

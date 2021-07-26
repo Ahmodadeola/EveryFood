@@ -1,6 +1,5 @@
 import React, { memo } from "react";
 import InputForm from "../../components/auth/InputForm";
-import AuthLayout from "../../layouts/authLayout";
 
 function Login() {
   const forms = {
@@ -23,11 +22,7 @@ function Login() {
       ],
     },
   };
-  return (
-    <AuthLayout>
-      <InputForm forms={forms} />
-    </AuthLayout>
-  );
+  return <InputForm forms={forms} />;
 }
 
 export default memo(Login);

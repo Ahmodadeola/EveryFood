@@ -10,11 +10,9 @@ function Tray() {
     dispatch(setActivePage("Tray"));
   }, [dispatch]);
   return (
-    <AppLayout page="tray">
-      <main>
-        <p>This is the tray page</p>
-      </main>
-    </AppLayout>
+    <main>
+      <p>This is the tray page</p>
+    </main>
   );
 }
 

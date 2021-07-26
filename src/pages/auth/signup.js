@@ -53,11 +53,7 @@ function Signup() {
     return formDup;
   }, initForms);
 
-  return (
-    <AuthLayout>
-      <InputForm forms={forms} updateForm={updateForm} mode="signup" />
-    </AuthLayout>
-  );
+  return <InputForm forms={forms} updateForm={updateForm} mode="signup" />;
 }
 
 export default Signup;

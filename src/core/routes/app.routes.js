@@ -5,17 +5,17 @@ import Vendor from "../../pages/app/vendor";
 import DishInfo from "../../pages/app/dishes/dish-info";
 
 const routes = [
-  { name: "Dishes", path: "/dishes", component: Dishes },
-  { name: "Profile", path: "/profile", component: Profile },
-  { name: "Tray", path: "/tray", component: Tray },
+  { name: "Dishes", path: "dishes", component: Dishes },
+  { name: "Profile", path: "profile", component: Profile },
+  { name: "Tray", path: "tray", component: Tray },
   {
     name: "Vendor",
-    path: "/vendor",
+    path: "vendor",
     component: Vendor,
   },
   {
     name: "DishInfo",
-    path: "/dishes/dish-info",
+    path: "dishes/dish-info",
     component: DishInfo,
   },
 ];

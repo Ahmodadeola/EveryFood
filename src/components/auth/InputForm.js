@@ -1,11 +1,12 @@
 import React, { memo } from "react";
 import Input from "./Input";
 import useForm from "../../hooks/useForm";
+import { Link } from "react-router-dom";
 
 // Note: Do not pass functions that can cause rerender as prop to a component invoking it in a
 // rerendering hook like useEffect, only pass memoized functions(using callback) in that scenerio
 
-function InputForm({ forms, mode = "login" }) {
+function InputForm({ forms = {}, mode = "login" }) {
   // extract form states and functions
   const { setFormData, submitForm, valid } = useForm(mode);
 
@@ -13,18 +14,21 @@ function InputForm({ forms, mode = "login" }) {
   const modeProps = {
     login: {
       btnText: "Login",
+      btnLink: "/app",
       otherAuthLink: "signup",
       otherAuthText: "Don't have an account yet?",
       headText: "User Login",
     },
     signup: {
       btnText: "Submit",
+      btnLink: "/app",
       otherAuthLink: "login",
       otherAuthText: "Have an account already?",
       headText: "Create account",
     },
     "forgot-password": {
       btnText: "Submit",
+      btnLink: "/app",
       headText: "Recover password",
       otherAuthText: "Back to ",
       otherAuthLink: "login",
@@ -32,7 +36,8 @@ function InputForm({ forms, mode = "login" }) {
   };
 
   // extract page texts
-  const { btnText, otherAuthLink, otherAuthText, headText } = modeProps[mode];
+  const { btnText, btnLink, otherAuthLink, otherAuthText, headText } =
+    modeProps[mode];
 
   return (
     <div className="py-8 h-full text-center">
@@ -49,24 +54,27 @@ function InputForm({ forms, mode = "login" }) {
             key={idx}
           />
         ))}
+
         <button
+          data-testid="submit"
           disabled={!valid}
           className="btn-custom mx-auto disabled:bg-green-100 disabled:cursor-none"
           onClick={submitForm}
         >
-          {btnText}
+          <Link to={btnLink}>{btnText}</Link>
         </button>
+
         <p className="text-sm font-bold text-gray-500">
           {otherAuthText}
-          <a href={`/auth/${otherAuthLink}`} className="text-green-700 ml-1">
+          <Link to={`/auth/${otherAuthLink}`} className="text-green-700 ml-1">
             {otherAuthLink}
-          </a>
+          </Link>
         </p>
         {mode !== "forgot-password" && (
           <p className="text-sm font-bold text-gray-500">
-            <a href={`/auth/forgot-password`} className="text-green-700 ml-1">
+            <Link to={`/auth/forgot-password`} className="text-green-700 ml-1">
               forgot password
-            </a>
+            </Link>
           </p>
         )}
       </form>

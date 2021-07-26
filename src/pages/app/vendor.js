@@ -11,11 +11,9 @@ function Vendor() {
     dispatch(setActivePage("Vendor"));
   }, [dispatch]);
   return (
-    <AppLayout page="vendor">
-      <main>
-        <p>This is the Vendor page</p>
-      </main>
-    </AppLayout>
+    <main>
+      <p>This is the Vendor page</p>
+    </main>
   );
 }
 

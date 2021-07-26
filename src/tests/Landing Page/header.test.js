@@ -1,8 +1,8 @@
-import { render } from "@testing-library/react";
 import Header from "../../components/home/Header";
+import renderWithRouter from "../TestHOC/renderWithRouter";
 
 describe("Landing page tests", () => {
-  const { getAllByText } = render(<Header />);
+  const { getAllByText } = renderWithRouter(<Header />);
 
   test("Header elements", () => {
     const texts = [
