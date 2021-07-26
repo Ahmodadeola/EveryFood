@@ -2,6 +2,7 @@ import React, { memo } from "react";
 import Input from "./Input";
 import useForm from "../../hooks/useForm";
 import { Link } from "react-router-dom";
+import { animated, useSpring, config } from "@react-spring/web";
 
 // Note: Do not pass functions that can cause rerender as prop to a component invoking it in a
 // rerendering hook like useEffect, only pass memoized functions(using callback) in that scenerio
@@ -39,8 +40,14 @@ function InputForm({ forms = {}, mode = "login" }) {
   const { btnText, btnLink, otherAuthLink, otherAuthText, headText } =
     modeProps[mode];
 
+  const props = useSpring({
+    from: { opacity: 0, transform: "translateY(200px)" },
+    to: { opacity: 1, transform: "translateX(0)" },
+    config: config.slow,
+    delay: 400,
+  });
   return (
-    <div className="py-8 h-full text-center">
+    <animated.div style={props} className="py-8 h-full text-center">
       <h2 className="ml-3 text-green-500 font-bold mb-5">EveryFood</h2>
       <h3 className="text-green-700 text-xl font-medium">{headText}</h3>
       <form className="flex flex-col space-y-4 items-center h-1/2 md:h-2/3 m-5">
@@ -78,7 +85,7 @@ function InputForm({ forms = {}, mode = "login" }) {
           </p>
         )}
       </form>
-    </div>
+    </animated.div>
   );
 }
 
