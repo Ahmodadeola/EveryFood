@@ -1,6 +1,7 @@
 import React from "react";
 import { FaMapMarker } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import "../../../assets/css/app/DishCard.css";
 
 function DishCard({ name, price, imgLink, scope, setupInfo = (f) => f }) {
   return (
@@ -10,7 +11,10 @@ function DishCard({ name, price, imgLink, scope, setupInfo = (f) => f }) {
         className="md:mx-4 shadow h-30 border-2 border-solid 
     border-transparent hover:border-green-300  rounded mb-10 cursor-pointer bg-white"
       >
-        <img src={imgLink} alt={name} className="h-40 w-full" />
+        <div className="card-img-container h-40">
+          <img src={imgLink} alt={name} className="card-img w-full" />
+        </div>
+
         <p className="text-auto text-gray-600 text-medium text-center">
           {name}
         </p>

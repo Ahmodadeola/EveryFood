@@ -1,6 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 import SpagImg from "../../assets/images/spag2.jpg";
 import Spag from "../../assets/images/spag.jpg";
+import ChickenBurger from "../../assets/images/chicken-burger.jpg";
+import YamAndEgg from "../../assets/images/yam-and-egg.jpg";
+import GrilledSteak from "../../assets/images/grilled-steak.jpg";
+import ChickenAndChips from "../../assets/images/chicken-and-chips.jpg";
 
 const initialState = {
   dishes: [
@@ -12,18 +16,25 @@ const initialState = {
       scope: "Ogun",
     },
     {
-      imgLink: Spag,
+      imgLink: YamAndEgg,
       price: 600,
       name: "Yam and egg",
       vendor: "Ajoke Fast Food",
       scope: "Ogun",
     },
     {
-      imgLink: SpagImg,
+      imgLink: ChickenBurger,
       price: 1600,
-      name: "Chicken and Chips",
+      name: "Chicken Burger",
       vendor: "Vine restaurant",
       scope: "Lagos",
+    },
+    {
+      imgLink: GrilledSteak,
+      price: 600,
+      name: "Grilled steak with vegetables",
+      vendor: "Mr. Biggs",
+      scope: "Ebute Meta",
     },
     {
       imgLink: Spag,
@@ -47,7 +58,7 @@ const initialState = {
       scope: "Ebute Meta",
     },
     {
-      imgLink: SpagImg,
+      imgLink: ChickenAndChips,
       price: 1600,
       name: "Chicken and Chips",
       vendor: "MamaDee food",
@@ -66,13 +77,6 @@ const initialState = {
       name: "Fried Rice and Chicken",
       vendor: "Fresh&Fast restaurant",
       scope: "Ogun",
-    },
-    {
-      imgLink: Spag,
-      price: 600,
-      name: "Beans and Dodo",
-      vendor: "Mr. Biggs",
-      scope: "Ebute Meta",
     },
   ],
   selectedDish: null,

@@ -32,7 +32,7 @@ function DishInfo() {
         <img
           src={selectedDish.imgLink}
           alt="food"
-          className="w-full h-60 md:h-80 md:w-full md:mt-5"
+          className="w-full h-60 md:h-80 md:w-full md:mt-5 object-cover rounded-lg"
         />
       </div>
       <div className="md:w-1/2 p-4 md:p-auto">
