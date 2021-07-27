@@ -14,7 +14,7 @@ function Customer() {
         </div>
 
         <div className="md:max-w-md text-center md:w-1/2 md:px-4">
-          <h2 className="text-xl font-bold mb-4 text-green-500">
+          <h2 className="text-xl md:text-2xl font-bold mb-4 text-green-700">
             Want something tasty?
           </h2>
           <p className="mb-4">
