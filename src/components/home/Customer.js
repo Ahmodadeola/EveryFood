@@ -8,13 +8,13 @@ function Customer() {
         <div className="mb-4 md:w-1/2">
           <img
             src={spag}
-            className="w-full h-60 md:h-72 m-0  md:rounded-lg"
-            alt=""
+            className="w-full h-60 md:h-72 m-0 object-cover  md:rounded-lg"
+            alt="spaghetti"
           />
         </div>
 
         <div className="md:max-w-md text-center md:w-1/2 md:px-4">
-          <h2 className="text-xl font-bold mb-4 text-green-500">
+          <h2 className="text-xl md:text-2xl font-bold mb-4 text-green-700">
             Want something tasty?
           </h2>
           <p className="mb-4">

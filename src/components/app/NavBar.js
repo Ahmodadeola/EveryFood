@@ -3,6 +3,7 @@ import NavItems from "../home/NavItems";
 import { FaUtensils, FaShoppingBasket, FaUserTie } from "react-icons/fa";
 import { AiFillShop } from "react-icons/ai";
 import { useSelector } from "react-redux";
+import Logo from "../ui/Logo";
 
 function NavBar() {
   const { active } = useSelector((state) => state.app);
@@ -27,9 +28,10 @@ function NavBar() {
   return (
     <nav className="hidden md:block fixed top-0 h-screen border-solid border-r-2 md:w-1/5">
       <ul className="invisible md:visible flex flex-col py-6 space-y-5">
-        <h2 className="text-2xl ml-2 text-green-600 font-bold pb-20">
-          EveryFood
-        </h2>
+        <div className="ml-6">
+          <Logo />
+        </div>
+        <div className="mt-48"></div>
         <NavItems
           items={navLinks}
           className="text-md cursor-pointer font-medium text-gray-500 border-solid border-white border-r-4 hover:text-indigo-500 hover:bg-indigo-100 p-3"
