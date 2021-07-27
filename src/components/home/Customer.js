@@ -8,8 +8,8 @@ function Customer() {
         <div className="mb-4 md:w-1/2">
           <img
             src={spag}
-            className="w-full h-60 md:h-72 m-0  md:rounded-lg"
-            alt=""
+            className="w-full h-60 md:h-72 m-0 object-cover  md:rounded-lg"
+            alt="spaghetti"
           />
         </div>
 

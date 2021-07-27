@@ -13,12 +13,12 @@
 @font-face {
   font-family: "Poppins";
   src: local("Poppins"),
-    url(./assets/fonts/Poppins/Poppins-Regular.ttf) format("truetype");
+    url(./assets/fonts/Poppins/Poppins-Medium.ttf) format("truetype");
 }
 
 html,
 body {
-  font-family: "Hammers";
+  font-family: "Poppins";
 }
 
 .App {
@@ -29,6 +29,7 @@ body {
 .btn-custom {
   @apply focus:outline-none px-6 py-3 bg-green-500 rounded-full font-bold hover:bg-green-300 
   transition ease-in duration-300 hover:text-green-500 hover:bg-green-200 bg-green-500 text-white;
+  font-family: "Hammers";
 }
 .btn-custom:disabled {
   @apply bg-transparent text-gray-600 border-solid border-2 border-gray-500 cursor-not-allowed;
