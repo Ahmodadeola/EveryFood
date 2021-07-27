@@ -1,3 +1,26 @@
+@font-face {
+  font-family: "Nunito";
+  src: local("Nunito"),
+    url(./assets/fonts/nunito/Nunito-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Hammers";
+  src: local("Hammers"),
+    url(./assets/fonts/hammersmith-one/HammersmithOne.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: local("Poppins"),
+    url(./assets/fonts/Poppins/Poppins-Regular.ttf) format("truetype");
+}
+
+html,
+body {
+  font-family: "Hammers";
+}
+
 .App {
   text-align: center;
   @apply text-gray-600 font-medium;
