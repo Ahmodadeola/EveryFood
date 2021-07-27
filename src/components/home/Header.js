@@ -3,6 +3,7 @@ import { FaBars } from "react-icons/fa";
 import MobileNavBar from "./MobileNavBar";
 import BackDrop from "../ui/BackDrop";
 import NavItems from "./NavItems";
+import Logo from "../ui/Logo";
 
 function Header() {
   const [isOpen, setOpen] = useState(false);
@@ -26,7 +27,8 @@ function Header() {
       <BackDrop show={isOpen} close={() => setOpen(!isOpen)} />
       <nav className="shadow-md flex items-center p-4">
         <div className="ml-3 md:ml-2 md:text-left">
-          <h2 className="text-left text-xl font-bold">EveryFood</h2>
+          <Logo />
+
           <span className="text-xs text-gray-600">
             Where food lovers meet food makers
           </span>
