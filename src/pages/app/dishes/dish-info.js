@@ -5,13 +5,14 @@ import {
   setCurrentPage,
   setActivePage,
 } from "../../../store/actions/appActions";
+import { addToTray } from "../../../store/actions/dishActions";
 import { useSelector } from "react-redux";
 import { FaPlusCircle, FaMinusCircle } from "react-icons/fa";
 import { Redirect } from "react-router";
 import { animated, useSpring, config } from "@react-spring/web";
 
 function DishInfo() {
-  const Dispatch = useDispatch();
+  const dispatch = useDispatch();
   const { selectedDish } = useSelector((state) => state.dish);
   const [units, updateUnit] = useReducer(
     (unit, action = "increment") =>
@@ -19,11 +20,20 @@ function DishInfo() {
     1
   );
 
+  const pushToTray = () => {
+    dispatch(
+      addToTray({
+        dish: selectedDish,
+        quantity: units,
+      })
+    );
+  };
+
   useEffect(() => {
-    Dispatch(setCurrentPage("Dish Info"));
-    Dispatch(setActivePage("Dishes"));
+    dispatch(setCurrentPage("Dish Info"));
+    dispatch(setActivePage("Dishes"));
     window.scrollTo(0, 0);
-  }, [Dispatch]);
+  }, [dispatch]);
 
   const props = useSpring({
     from: { opacity: 0, transform: "translateY(200px)" },
@@ -94,6 +104,7 @@ function DishInfo() {
           </div>
           <div className="w-full flex justify-center">
             <button
+              onClick={pushToTray}
               disabled={units === 0}
               className="btn btn-custom disabled:bg-transparent"
             >

@@ -80,24 +80,33 @@ const initialState = {
     },
   ],
   selectedDish: null,
+  tray: [],
 };
 
 const dishesSlice = createSlice({
   name: "Dishes",
   initialState,
   reducers: {
-    setPageDish(state, { payload }) {
+    setDishes(state, { payload }) {
       state.dishes = payload;
     },
 
     setSelectedDish(state, { payload }) {
       state.selectedDish = payload;
     },
+
+    setTray(state, { payload }) {
+      state.tray = payload;
+    },
+
+    addToTray(state, { payload }) {
+      state.tray.push(payload);
+    },
   },
 });
 
 const { reducer, actions } = dishesSlice;
 
-export const { setPageDish, setSelectedDish } = actions;
+export const { setDishes, setSelectedDish, addToTray } = actions;
 
 export default reducer;
