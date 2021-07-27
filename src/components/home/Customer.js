@@ -17,7 +17,7 @@ function Customer() {
           <h2 className="text-xl md:text-2xl font-bold mb-4 text-green-700">
             Want something tasty?
           </h2>
-          <p className="mb-4">
+          <p className="mb-4 text-sm">
             EveryFood offers you a plethora of tasty dishes from different food
             vendors across different locations delivered to you in a jiff(We
             can't teleport though)

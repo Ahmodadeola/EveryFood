@@ -16,7 +16,7 @@ function About() {
           <h2 className="text-xl md:text-2xl font-bold mb-4 text-green-700">
             What do we do?
           </h2>
-          <p className="mb-4">
+          <p className="mb-4 text-sm">
             We provide a smooth and interactable web platform where food vendors
             at different locations can put up varieties of dishes for sale and
             consumers can navigate through multiple dishes to place order.
