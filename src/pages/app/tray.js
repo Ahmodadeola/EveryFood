@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
-import AppLayout from "../../layouts/appLayout";
 import { setActivePage, setCurrentPage } from "../../store/actions/appActions";
 import { useDispatch } from "react-redux";
+import { animated, useSpring, config } from "@react-spring/web";
+
 function Tray() {
   const dispatch = useDispatch();
 
@@ -9,10 +10,16 @@ function Tray() {
     dispatch(setCurrentPage("Tray"));
     dispatch(setActivePage("Tray"));
   }, [dispatch]);
+  const props = useSpring({
+    from: { opacity: 0, transform: "translateY(200px)" },
+    to: { opacity: 1, transform: "translateX(0)" },
+    config: config.slow,
+    delay: 600,
+  });
   return (
-    <main>
+    <animated.main style={props}>
       <p>This is the tray page</p>
-    </main>
+    </animated.main>
   );
 }
 

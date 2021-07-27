@@ -6,6 +6,7 @@ import {
   setActivePage,
 } from "../../../store/actions/appActions";
 import { setSelectedDish } from "../../../store/actions/dishActions";
+import { animated, useSpring, config } from "@react-spring/web";
 
 function Dishes() {
   const dispatch = useDispatch();
@@ -22,12 +23,21 @@ function Dishes() {
   }, [dispatch]);
 
   const { dishes } = useSelector((state) => state.dish);
+  const props = useSpring({
+    from: { opacity: 0, transform: "translateY(200px)" },
+    to: { opacity: 1, transform: "translateX(0)" },
+    config: config.slow,
+    delay: 400,
+  });
   return (
-    <div className="p-6 w-full grid md:grid-cols-3 lg:grid-cols-4">
+    <animated.div
+      style={props}
+      className="p-6 w-full grid md:grid-cols-3 lg:grid-cols-4"
+    >
       {dishes.map((dish, idx) => (
         <DishCard {...dish} key={idx} setupInfo={() => setupInfo(dish)} />
       ))}
-    </div>
+    </animated.div>
   );
 }
 
