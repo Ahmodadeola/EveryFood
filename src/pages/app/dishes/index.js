@@ -25,9 +25,7 @@ function Dishes() {
   const { dishes } = useSelector((state) => state.dish);
   const props = useSpring({
     from: { opacity: 0, transform: "translateY(200px)" },
-    to: { opacity: 1, transform: "translateX(0)" },
-    config: config.slow,
-    delay: 400,
+    to: { opacity: 1, transform: "translateY(0)" },
   });
   return (
     <animated.div
