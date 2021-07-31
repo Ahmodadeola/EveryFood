@@ -1,14 +1,23 @@
 import React from "react";
-import spag from "../../assets/images/spag.jpg";
+import ChickenBurger from "../../assets/images/chicken-burger.jpg";
 
 function Customer() {
   return (
     <div className="bg-green-100 ">
       <section className="md:h-96 mx-auto items-center md:px-8 lg:w-5/6 py-10 pt-0 md:flex md:justify-around md:mb-8 md:pb-0">
-        <div className="mb-4 md:w-1/2">
+        <div
+          style={{
+            height: "20em",
+          }}
+          className="mb-4 md:w-1/2"
+        >
           <img
-            src={spag}
-            className="w-full h-60 md:h-72 m-0 object-cover  md:rounded-lg"
+            style={{
+              height: "100%",
+              width: "100%",
+            }}
+            src={ChickenBurger}
+            className="w-full m-0 object-cover md:rounded-lg"
             alt="spaghetti"
           />
         </div>

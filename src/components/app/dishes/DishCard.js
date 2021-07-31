@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import "../../../assets/css/app/DishCard.css";
 
 function DishCard({ name, price, imgLink, scope, setupInfo = (f) => f }) {
+  name = name.length > 35 ? name.slice(0, 35) + "..." : name;
   return (
     <Link to="/app/dishes/dish-info">
       <div
@@ -15,7 +16,9 @@ function DishCard({ name, price, imgLink, scope, setupInfo = (f) => f }) {
           <img src={imgLink} alt={name} className="card-img w-full" />
         </div>
 
-        <p className="text-auto text-gray-600 text-sm text-center">{name}</p>
+        <p className="text-auto text-gray-600 text-sm text-center mt-2 leading-3">
+          {name}
+        </p>
         <div className="absolute -bottom-2 w-full">
           <div className="flex justify-between p-4 ">
             <p className="text-yellow-400 text-sm">
@@ -24,7 +27,7 @@ function DishCard({ name, price, imgLink, scope, setupInfo = (f) => f }) {
             </p>
             <div className="flex justify-around items-center space-x-1">
               <FaMapMarker size="10" className="inline-block text-green-400" />
-              <p className="text-yellow-400 text-sm">{scope}</p>
+              <p className="text-yellow-400 text-xs">{scope}</p>
             </div>
           </div>
         </div>

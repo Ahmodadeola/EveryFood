@@ -53,7 +53,7 @@ const initialState = {
     {
       imgLink: Spag,
       price: 600,
-      name: "Beans and Dodo",
+      name: "Aganyin Beans and soft Dodo with chill coca-cola soft drink",
       vendor: "BukaHut Foods",
       scope: "Ebute Meta",
     },
