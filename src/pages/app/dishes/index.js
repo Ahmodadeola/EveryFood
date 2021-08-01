@@ -6,14 +6,13 @@ import {
   setActivePage,
 } from "../../../store/actions/appActions";
 import { setSelectedDish } from "../../../store/actions/dishActions";
-import { animated, useSpring, config } from "@react-spring/web";
+import { animated, useSpring } from "@react-spring/web";
 
 function Dishes() {
   const dispatch = useDispatch();
 
   const setupInfo = (dish) => {
     dispatch(setSelectedDish(dish));
-    console.log("Done setting");
   };
 
   useEffect(() => {

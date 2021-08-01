@@ -20,8 +20,8 @@ function DishCard({ name, price, imgLink, scope, setupInfo = (f) => f }) {
           {name}
         </p>
         <div className="absolute -bottom-2 w-full">
-          <div className="flex justify-between p-4 ">
-            <p className="text-yellow-400 text-sm">
+          <div className="flex justify-between p-4 md:px-1">
+            <p className="text-yellow-400 text-xs">
               <span>&#8358;</span>
               {price}
             </p>

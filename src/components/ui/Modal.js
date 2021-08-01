@@ -6,11 +6,11 @@ const Modal = ({ show = false, close = () => null, children }) => {
   const animationProps = useSpring({
     from: {
       opacity: 0,
-      transform: show ? "translateY(-200px)" : "translateY(0)",
+      transform: show ? "translateY(-500px)" : "translateY(0)",
     },
     to: {
       opacity: show ? 1 : 0,
-      transform: show ? "translateY(0)" : "translateY(-200px)",
+      transform: show ? "translateY(0)" : "translateY(-500px)",
     },
     config: config.slow,
     delay: show ? 400 : 0,

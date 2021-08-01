@@ -1,0 +1,20 @@
+.card-img-container {
+  height: 10rem;
+}
+
+.traycard-container {
+  height: 16em;
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+  max-height: max-content;
+  object-fit: cover;
+}
+
+@media screen(min-width: 768px) {
+  .card-img-container {
+    height: 22em;
+  }
+}
