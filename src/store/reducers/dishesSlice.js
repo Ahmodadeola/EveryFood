@@ -110,13 +110,15 @@ const dishesSlice = createSlice({
     },
 
     addToTray(state, { payload }) {
-      state.tray.push(payload);
+      const dishId = payload.dish.id;
+      let item = state.tray.find((item) => item.dish.id === dishId);
+      if (item) item.quantity = payload.quantity;
+      else state.tray.push(payload);
     },
 
     removeFromTray(state, { payload }) {
       const dishId = payload;
       state.tray = state.tray.filter((item) => item.dish.id !== dishId);
-      console.log("removed");
     },
   },
 });
