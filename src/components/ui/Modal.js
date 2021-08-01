@@ -3,31 +3,31 @@ import { animated, useSpring, config } from "@react-spring/web";
 import BackDrop from "./BackDrop";
 
 const Modal = ({ show = false, close = () => null, children }) => {
-  const props = useSpring({
+  const animationProps = useSpring({
     from: {
-      opacity: show ? 0 : 1,
+      opacity: 0,
       transform: show ? "translateY(-200px)" : "translateY(0)",
     },
     to: {
       opacity: show ? 1 : 0,
-      transform: show ? "translateY(0)" : "transalateY(-200px)",
+      transform: show ? "translateY(0)" : "translateY(-200px)",
     },
     config: config.slow,
-    delay: show ? 800 : 100,
+    delay: show ? 400 : 0,
   });
+
   return (
-    <animated.div
-      style={props}
-      className="absolute flex justify-center items-center z-30"
-    >
+    <>
       <BackDrop show={show} close={close} />
       <animated.div
-        style={props}
-        className="bg-white h-auto mt-28 max-w-md md:max-w-lg z-20 p-4"
+        style={animationProps}
+        className="absolute flex justify-center pt-20 items-center z-30"
       >
-        {children}
+        <div className="bg-white h-auto mx-auto max-w-md md:max-w-lg p-4">
+          {children}
+        </div>
       </animated.div>
-    </animated.div>
+    </>
   );
 };
 

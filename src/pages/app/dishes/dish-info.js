@@ -11,6 +11,7 @@ import { FaPlusCircle, FaMinusCircle, FaCheck } from "react-icons/fa";
 import { Redirect } from "react-router";
 import { animated, useSpring, config } from "@react-spring/web";
 import Modal from "../../../components/ui/Modal";
+import { Link } from "react-router-dom";
 
 function DishInfo() {
   const dispatch = useDispatch();
@@ -61,7 +62,7 @@ function DishInfo() {
           </p>
           <div className="w-full flex justify-center">
             <button className="btn-custom p-3 text-sm font-light mt-5 mx-auto">
-              Back to dishes
+              <Link to="/app/dishes">Back to dishes</Link>
             </button>
           </div>
         </div>
