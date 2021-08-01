@@ -3,7 +3,10 @@ import { setActivePage, setCurrentPage } from "../../store/actions/appActions";
 import { useDispatch, useSelector } from "react-redux";
 import { animated, useSpring, config } from "@react-spring/web";
 import TrayCard from "../../components/app/tray/TrayCard";
-import { setSelectedDish } from "../../store/reducers/dishesSlice";
+import {
+  setSelectedDish,
+  removeFromTray,
+} from "../../store/reducers/dishesSlice";
 import { Link } from "react-router-dom";
 
 function Tray() {
@@ -27,11 +30,12 @@ function Tray() {
       style={props}
       className="p-6 w-full grid md:grid-cols-3 lg:grid-cols-4"
     >
-      {tray.map((item, idx) => (
+      {tray.map((item) => (
         <TrayCard
           {...item}
-          key={idx}
+          key={item.dish.id}
           setupInfo={() => dispatch(setSelectedDish(item.dish))}
+          removeItem={() => dispatch(removeFromTray(item.dish.id))}
         />
       ))}
     </animated.div>
@@ -43,7 +47,7 @@ function Tray() {
       </h2>
       <div className="w-full flex justify-center">
         <button className="btn btn-custom mt-3 mx-auto">
-          <Link to="/app/dishes">Go To Dishe</Link>s
+          <Link to="/app/dishes">Go To Dishes</Link>s
         </button>
       </div>
     </div>

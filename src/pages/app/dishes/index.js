@@ -31,8 +31,8 @@ function Dishes() {
       style={props}
       className="p-6 w-full grid md:grid-cols-3 lg:grid-cols-4"
     >
-      {dishes.map((dish, idx) => (
-        <DishCard {...dish} key={idx} setupInfo={() => setupInfo(dish)} />
+      {dishes.map((dish) => (
+        <DishCard {...dish} key={dish.id} setupInfo={() => setupInfo(dish)} />
       ))}
     </animated.div>
   );

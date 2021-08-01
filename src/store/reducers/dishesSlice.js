@@ -9,6 +9,7 @@ import ChickenAndChips from "../../assets/images/chicken-and-chips.jpg";
 const initialState = {
   dishes: [
     {
+      id: "01",
       imgLink: SpagImg,
       price: 600,
       name: "Amala and Efo Riro",
@@ -16,6 +17,7 @@ const initialState = {
       scope: "Ogun",
     },
     {
+      id: "02",
       imgLink: YamAndEgg,
       price: 600,
       name: "Yam and egg",
@@ -23,6 +25,7 @@ const initialState = {
       scope: "Ogun",
     },
     {
+      id: "03",
       imgLink: ChickenBurger,
       price: 1600,
       name: "Chicken Burger",
@@ -30,6 +33,7 @@ const initialState = {
       scope: "Lagos",
     },
     {
+      id: "04",
       imgLink: GrilledSteak,
       price: 600,
       name: "Grilled steak with vegetables",
@@ -37,6 +41,7 @@ const initialState = {
       scope: "Ebute Meta",
     },
     {
+      id: "05",
       imgLink: Spag,
       price: 600,
       name: "Bread and Beans",
@@ -44,6 +49,7 @@ const initialState = {
       scope: "Ogun",
     },
     {
+      id: "06",
       imgLink: SpagImg,
       price: 600,
       name: "Fried Rice and Chicken",
@@ -51,6 +57,7 @@ const initialState = {
       scope: "Ogun",
     },
     {
+      id: "07",
       imgLink: Spag,
       price: 600,
       name: "Aganyin Beans and soft Dodo with chill coca-cola soft drink",
@@ -58,6 +65,7 @@ const initialState = {
       scope: "Ebute Meta",
     },
     {
+      id: "08",
       imgLink: ChickenAndChips,
       price: 1600,
       name: "Chicken and Chips",
@@ -65,6 +73,7 @@ const initialState = {
       scope: "Lagos",
     },
     {
+      id: "09",
       imgLink: Spag,
       price: 600,
       name: "Spagetti",
@@ -72,6 +81,7 @@ const initialState = {
       scope: "Ogun",
     },
     {
+      id: "10",
       imgLink: SpagImg,
       price: 600,
       name: "Fried Rice and Chicken",
@@ -102,11 +112,18 @@ const dishesSlice = createSlice({
     addToTray(state, { payload }) {
       state.tray.push(payload);
     },
+
+    removeFromTray(state, { payload }) {
+      const dishId = payload;
+      state.tray = state.tray.filter((item) => item.dish.id !== dishId);
+      console.log("removed");
+    },
   },
 });
 
 const { reducer, actions } = dishesSlice;
 
-export const { setDishes, setSelectedDish, addToTray } = actions;
+export const { setDishes, setSelectedDish, addToTray, removeFromTray } =
+  actions;
 
 export default reducer;
