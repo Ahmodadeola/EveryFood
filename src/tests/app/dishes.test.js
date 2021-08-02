@@ -1,7 +1,6 @@
 import Dishes from "../../pages/app/dishes";
 import renderAll from "../TestHOC/renderWithAll";
-import { screen } from "@testing-library/react";
-import initDishState from "../others/initDishState";
+import { initDishState } from "../others/initState";
 
 describe("Dishes page test", () => {
   test("Dish cards test based on items set in the store", () => {
@@ -12,6 +11,5 @@ describe("Dishes page test", () => {
       getAllByText(dish.price);
       getAllByAltText(dish.name);
     });
-    screen.debug();
   });
 });

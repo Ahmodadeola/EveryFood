@@ -125,7 +125,12 @@ const dishesSlice = createSlice({
 
 const { reducer, actions } = dishesSlice;
 
-export const { setDishes, setSelectedDish, addToTray, removeFromTray } =
-  actions;
+export const {
+  setDishes,
+  setSelectedDish,
+  setTray,
+  addToTray,
+  removeFromTray,
+} = actions;
 
 export default reducer;
