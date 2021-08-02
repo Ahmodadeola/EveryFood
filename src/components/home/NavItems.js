@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function NavItems({ items, className }) {
+function NavItems({ items, className, close = () => null }) {
   let allClasses = className;
   return (
     <>
@@ -10,7 +10,7 @@ function NavItems({ items, className }) {
           ? allClasses.concat(" " + item.addStyle)
           : className;
         return (
-          <Link to={item.link} key={idx}>
+          <Link to={item.link} key={idx} onClick={close}>
             <li className={allClasses}>
               {item.icon && (
                 <item.icon
