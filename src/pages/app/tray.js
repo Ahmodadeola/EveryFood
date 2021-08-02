@@ -34,7 +34,9 @@ function Tray() {
         <TrayCard
           {...item}
           key={item.dish.id}
-          setupInfo={() => dispatch(setSelectedDish(item.dish))}
+          setupInfo={() =>
+            dispatch(setSelectedDish({ ...item.dish, quantity: item.quantity }))
+          }
           removeItem={() => dispatch(removeFromTray(item.dish.id))}
         />
       ))}

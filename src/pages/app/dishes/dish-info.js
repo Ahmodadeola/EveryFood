@@ -20,7 +20,7 @@ function DishInfo() {
   const [units, updateUnit] = useReducer(
     (unit, action = "increment") =>
       action === "increment" ? ++unit : unit > 0 ? --unit : 0,
-    1
+    selectedDish?.quantity
   );
 
   const pushToTray = () => {

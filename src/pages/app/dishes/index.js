@@ -12,7 +12,7 @@ function Dishes() {
   const dispatch = useDispatch();
 
   const setupInfo = (dish) => {
-    dispatch(setSelectedDish(dish));
+    dispatch(setSelectedDish({ ...dish, quantity: 1 }));
   };
 
   useEffect(() => {
