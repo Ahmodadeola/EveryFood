@@ -6,14 +6,13 @@ import {
   setActivePage,
 } from "../../../store/actions/appActions";
 import { setSelectedDish } from "../../../store/actions/dishActions";
-import { animated, useSpring, config } from "@react-spring/web";
+import { animated, useSpring } from "@react-spring/web";
 
 function Dishes() {
   const dispatch = useDispatch();
 
   const setupInfo = (dish) => {
-    dispatch(setSelectedDish(dish));
-    console.log("Done setting");
+    dispatch(setSelectedDish({ ...dish, quantity: 1 }));
   };
 
   useEffect(() => {
@@ -32,8 +31,8 @@ function Dishes() {
       style={props}
       className="p-6 w-full grid md:grid-cols-3 lg:grid-cols-4"
     >
-      {dishes.map((dish, idx) => (
-        <DishCard {...dish} key={idx} setupInfo={() => setupInfo(dish)} />
+      {dishes.map((dish) => (
+        <DishCard {...dish} key={dish.id} setupInfo={() => setupInfo(dish)} />
       ))}
     </animated.div>
   );

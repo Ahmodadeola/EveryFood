@@ -14,7 +14,7 @@ function AppLayout() {
         <Header />
       </div>
 
-      <main className="w-full min-h-screen md:w-4/5 md:float-right bg-gray-100 pt-20">
+      <main className="w-full min-h-screen md:w-4/5 md:float-right bg-gray-100 pt-16 md:pt-20">
         <Switch>
           <Route
             exact

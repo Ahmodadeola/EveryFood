@@ -11,6 +11,7 @@ import { FaPlusCircle, FaMinusCircle, FaCheck } from "react-icons/fa";
 import { Redirect } from "react-router";
 import { animated, useSpring, config } from "@react-spring/web";
 import Modal from "../../../components/ui/Modal";
+import { Link } from "react-router-dom";
 
 function DishInfo() {
   const dispatch = useDispatch();
@@ -19,7 +20,7 @@ function DishInfo() {
   const [units, updateUnit] = useReducer(
     (unit, action = "increment") =>
       action === "increment" ? ++unit : unit > 0 ? --unit : 0,
-    1
+    selectedDish?.quantity
   );
 
   const pushToTray = () => {
@@ -48,9 +49,27 @@ function DishInfo() {
   if (!selectedDish) return <Redirect to="/app/dishes" />;
   return (
     <>
+      <Modal show={show} close={() => setShow(false)}>
+        <div>
+          <div className="flex justify-center items-center mb-4 text-green-500">
+            <FaCheck size="20" className="mr-3" />
+            <h2 className="font-bold  text-lg text-center">
+              Added item to tray
+            </h2>
+          </div>
+          <p className="text-center text-sm font-thin">
+            {selectedDish.name} has been successfully added to your dish tray!
+          </p>
+          <div className="w-full flex justify-center">
+            <button className="btn-custom p-3 text-sm font-light mt-5 mx-auto">
+              <Link to="/app/dishes">Back to dishes</Link>
+            </button>
+          </div>
+        </div>
+      </Modal>
       <animated.div
         style={props}
-        className="md:mx-auto  md:flex md:space-x-8 md:w-5/6 lg:w-3/5"
+        className="md:mx-auto lg:mt-20 md:items-center md:flex md:space-x-8 md:w-5/6 lg:w-3/5"
       >
         <div className="md:w-1/2 h-60 md:h-80">
           <img
@@ -118,17 +137,6 @@ function DishInfo() {
           </div>
         </div>
       </animated.div>
-      <Modal show={show} close={() => setShow(false)}>
-        <div>
-          <h2 className="font-bold text-lg text-center">
-            <FaCheck size="3" />
-            Added item to tray success
-          </h2>
-          <p>
-            {selectedDish.name} has been successfully added to your dish tray!
-          </p>
-        </div>
-      </Modal>
     </>
   );
 }

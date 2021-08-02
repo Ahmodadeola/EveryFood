@@ -15,7 +15,7 @@ function Vendor() {
         <h2 className="text-xl md:text-2xl font-bold mb-4 text-green-700">
           Are you a food vendor?
         </h2>
-        <p className="mb-4">
+        <p className="mb-4 text-sm">
           You can showcase your dishes here at everyFood for good meal lovers to
           quickly place orders and you make your money fast.
         </p>

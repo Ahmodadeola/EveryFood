@@ -2,8 +2,8 @@
   height: 10rem;
 }
 
-.dishcard-container {
-  height: 14em;
+.traycard-container {
+  height: 16em;
 }
 
 .card-img {
@@ -15,6 +15,6 @@
 
 @media screen(min-width: 768px) {
   .card-img-container {
-    height: 15em;
+    height: 22em;
   }
 }

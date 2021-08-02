@@ -1,1 +1,6 @@
-export { setDishes, setSelectedDish, addToTray } from "../reducers/dishesSlice";
+export {
+  setDishes,
+  setSelectedDish,
+  addToTray,
+  removeFromTray,
+} from "../reducers/dishesSlice";
