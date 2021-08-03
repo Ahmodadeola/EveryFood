@@ -21,7 +21,7 @@ const Modal = ({ show = false, close = () => null, children }) => {
       <BackDrop show={show} close={close} />
       <animated.div
         style={animationProps}
-        className="absolute flex justify-center pt-20 items-center z-30 w-4/5"
+        className="absolute flex justify-center pt-20 items-center z-30 md:w-4/5"
       >
         <div className="bg-white h-auto mx-auto w-5/6 md:max-w-sm md:m-auto p-4">
           {children}

@@ -26,21 +26,30 @@ function Tray() {
 
   const { tray } = useSelector((state) => state.dish);
   const TrayContent = (
-    <animated.div
-      style={props}
-      className="p-6 w-full grid md:grid-cols-3 lg:grid-cols-4"
-    >
-      {tray.map((item) => (
-        <TrayCard
-          {...item}
-          key={item.dish.id}
-          setupInfo={() =>
-            dispatch(setSelectedDish({ ...item.dish, quantity: item.quantity }))
-          }
-          removeItem={() => dispatch(removeFromTray(item.dish.id))}
-        />
-      ))}
-    </animated.div>
+    <div className="w-full">
+      <animated.div
+        style={props}
+        className="p-6 w-full grid md:grid-cols-3 lg:grid-cols-4"
+      >
+        {tray.map((item) => (
+          <TrayCard
+            {...item}
+            key={item.dish.id}
+            setupInfo={() =>
+              dispatch(
+                setSelectedDish({ ...item.dish, quantity: item.quantity })
+              )
+            }
+            removeItem={() => dispatch(removeFromTray(item.dish.id))}
+          />
+        ))}
+      </animated.div>
+      <div className="fixed bottom-2 float-right text-center md:text-right w-full md:w-4/5">
+        <button className="md:mr-4 rounded-lg outline-none border-2 border-solid border-green-500 bg-white hover:border-transparent hover:text-white hover:bg-green-500 p-3 text-green-500 text-lg">
+          Checkout
+        </button>
+      </div>
+    </div>
   );
   const EmptyTray = (
     <div className="w-full">

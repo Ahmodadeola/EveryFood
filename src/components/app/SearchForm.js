@@ -4,7 +4,6 @@ import SearchResult from "./SearchResult";
 import useSearch from "../../hooks/useSearch";
 import { useDispatch, useSelector } from "react-redux";
 import { setSelectedDish } from "../../store/reducers/dishesSlice";
-import { animated, useSpring, config } from "@react-spring/web";
 
 function SearchForm({ toggle }) {
   const { dishes } = useSelector((state) => state.dish);
@@ -40,7 +39,9 @@ function SearchForm({ toggle }) {
       {!!keyword && (
         <SearchResult
           results={results}
-          setDish={(dish) => dispatch(setSelectedDish(dish))}
+          setDish={(dish) =>
+            dispatch(setSelectedDish({ ...dish, quantity: 1 }))
+          }
           reset={reset}
         />
       )}

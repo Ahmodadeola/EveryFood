@@ -49,7 +49,7 @@ function Header() {
             />
             <p
               title="currentPage"
-              className="text-lg text-green-400 font-medium ml-6"
+              className="text-lg text-green-400 font-medium md:ml-6"
             >
               {currentPage &&
                 currentPage[0].toUpperCase() + currentPage.slice(1)}

@@ -12,6 +12,7 @@ describe("Dishes page test", () => {
       getAllByText(item.dish.price);
       getAllByAltText(item.dish.name);
       getAllByText(item.quantity + " unit(s)");
+      getAllByText(item.dish.price * item.quantity);
     });
     screen.debug();
   });
